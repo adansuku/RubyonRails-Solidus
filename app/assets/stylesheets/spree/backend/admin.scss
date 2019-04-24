@@ -1,0 +1,28 @@
+.admin-nav-header {
+	a {
+	    width: 85%;
+	    position: absolute;
+	}
+	img {
+	    width: 100%;
+	}
+}
+
+.btn-default{
+    display: inline-block;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: #5498DA;
+    color: white !important;
+    font-weight: 600 !important;
+    white-space: nowrap;
+    line-height: 1.5;
+    &:hover{
+	    background-color: #9FC820;
+	    color: white;
+    }
+    &:visited{
+    	color:white;
+    }
+}

@@ -1,0 +1,84 @@
+<% if can_show_filters? %>
+  <div id="product-grid-sort" class="pull-right">
+    <ul class="cd-filters-sort">
+      <a href="#" class="cd-filter-trigger" id='trigger-filters' >
+        <span><%= t(:filters) %>&nbsp;</span>
+        <i class='icon-arrow-down'></i>
+      </a> 
+    </ul>
+    <ul class="cd-filters-sort">
+      <li class='dropdown'>
+         <%= link_to "#{t(:order_by)}&nbsp;<i class='icon-arrow-down'></i>".html_safe , '#', :data => { :toggle => 'dropdown' }, :class => "dropdown-toggle", :role => 'button' %>
+        <ul class='dropdown-menu'>
+          <li><a class='filter' tabindex="-1" href="<%= redirection_page_order_scope %>?order=descend_by_popularity"><%= t(:order_scope_relevance)%></a></li>
+          <li><a class='filter' tabindex="-1" href="<%= redirection_page_order_scope %>?order=descend_by_master_price"><%= t(:order_scope_descend_by_master_price)%></a></li>
+          <li><a class='filter' tabindex="-1" href="<%= redirection_page_order_scope %>?order=ascend_by_master_price"><%= t(:order_scope_ascend_by_master_price)%></a></li>
+          <li><a class='filter' tabindex="-1" href="<%= redirection_page_order_scope %>?order=ascend_by_name"><%= t(:order_scope_ascend_by_name)%></a></li>
+          <li><a class='filter' tabindex="-1" href="<%= redirection_page_order_scope %>?order=descend_by_name"><%= t(:order_scope_descend_by_name)%></a></li>
+          <li><a class='filter' tabindex="-1" href="<%= redirection_page_order_scope %>?order=descend_by_updated_at"><%= t(:order_scope_descend_by_updated_at)%></a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="cd-filters-sort">
+      <span><%= Spree.t(:show) %></span>
+      <li class="li-inline hidden-sm hidden-md hidden-lg"><a id="grid-th-vertical" href="#">1&nbsp;&nbsp;|</a></li>
+      <li class='li-inline'><a id="grid-th" href="#">&nbsp;2&nbsp;</a></li>          
+      <li class="li-inline hidden-xs"><a id="grid-th-large" href="#">|&nbsp;&nbsp;3&nbsp;&nbsp;|</a></li>
+      <li class="li-inline hidden-xs"><a id="grid-th-extra-large" href="#">&nbsp;4</a></li>
+    </ul>
+  </div>
+<% filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons] %>
+  <% unless filters.empty? %>  
+  <div class="cd-filter">
+    <div id="form-filter-header">
+      <a href="#" class="cd-close"><i class="fa fa-close fa-lg"><span class='hidden'>&nbsp;</span></i></a>
+      <h4 id='filters' ><%= t(:filters) %></h4>
+    </div>
+    <div id="form-filters">      
+      <% url = ( current_page?(products_path) ? products_path : (@taxon.parent.blank?) ? '/t/' + @taxon.permalink : '/t/' + @taxon.parent.permalink) %>
+      <%= form_tag url, :method => :get, :id => 'sidebar_products_search', name: 'sidebar_products_search' do %>
+        <% filters.each do |filter| %>
+          <% next if !filter.present? %>
+          <% labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]} %>
+          <% if labels.present? %>
+            <div class="cd-filter-block">
+              <h4 class='span-filter-title'> <%= t(filter[:name]) %>  </h4>
+              <ul class="cd-filter-content cd-filters list <%= t(filter[:name]).downcase %>">
+                <% if filter[:name] == :price_between %>
+                  <li>
+                      <%= filter[:min] %>€&nbsp;
+                      <%= text_field_tag :price_between, nil, name: 'search[' + filter[:scope].to_s + '][]', 
+                          :data => {'slider-id'    => 'ex2Slider',
+                                    'slider-min'   => filter[:min],
+                                    'slider-max'   => filter[:max],
+                                    'slider-step'  => filter[:step],
+                                    'slider-value' => [filter[:min],filter[:max]]},
+                          :value => '' + filter[:min].to_s + ',' + filter[:max].to_s %>
+                      &nbsp;<%= filter[:max] %>€
+                  </li>
+                <% else %>
+                <% labels.each do |nm,val| %>
+                  <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>
+                  <li>
+                    <input type="checkbox"
+                           class="filter"
+                           id="<%= label %>"
+                           name="search[<%= filter[:scope].to_s %>][<%= nm %>]"
+                           value="<%= val %>"
+                           <%= params[:search] && params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" %> />
+                    <label class="checkbox-label" for="<%= label %>"> <%= nm %> </label>
+                  </li>
+                  <% end %>
+                <% end %>
+              </ul><!-- cd-filter-content -->
+            </div><!-- cd-filter-block -->
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="form-filter-footer">
+      <%= button_tag Spree.t(:search), :name => nil, :form => 'sidebar_products_search', :class => 'btn btn-primary' %>
+    </div>
+  </div> <!-- cd-filter -->
+  <% end %>
+<% end %>

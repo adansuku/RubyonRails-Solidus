@@ -1,0 +1,20 @@
+<footer id="footer">
+  <div class="inner">
+    <%= render_snippet('/footer-icons') %>
+    <div class="row-footer-2 flex-center">
+      <div class="item flex-center left">
+       <%= render_snippet('/footer-newsletter') %>
+      </div>
+      <div class="item flex-center right">
+        <%= render_snippet('/footer-social') %>
+      </div>
+    </div>
+    <div class="flex-center row-footer-1">
+       <%= render partial: "spree/static_content/static_content_footer" %>
+    </div>
+    <div class="container">
+      <p class='flex-center'>Copyright © <%= Time.now.year %> Florentino. <%= Spree.t(:all_rights_reserved) %></p>
+    </div>
+    </div>
+  </div>
+</footer>

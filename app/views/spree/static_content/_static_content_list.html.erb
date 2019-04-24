@@ -1,0 +1,7 @@
+<% css_class = "col-xs-12 col-sm-12 col-md-3 li-links" %>
+<% if page.foreign_link.present? %>
+  <li class="<%= css_class if (page.slug.include?("mundo-florentino") || page.slug.include?("editorial")) %>"><%= link_to page.title, page.foreign_link, (page.foreign_link.include? 'http') ? {:target => "_blank"} : {:target => "_self"}  %></li>
+<% else %>
+  <% page_uri = Rails.application.routes.named_routes[:spree].path.spec.to_s == '/' ? page.slug : Rails.application.routes.named_routes[:spree].path.spec.to_s + page.slug %>
+  <li class="<%= css_class if (page.slug.include?("mundo-florentino") || page.slug.include?("editorial")) %>"><%= link_to page.title, page_uri  %></li>
+<% end %>

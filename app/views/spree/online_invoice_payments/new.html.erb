@@ -1,0 +1,102 @@
+<% content_for :head do -%>
+  <meta name="title" content="<%= t(:distributors) %>">
+<% end -%>
+
+  <div class="col-md-12" id="text-info">
+    <h1><%=Spree.t(:secure_payments)%></h1>
+    <p class='text-center'><%= Spree.t(:online_invoice_payment_description)%></p>
+  </div>
+
+    <%= form_for @online_invoice_payment, :html => { :novalidate => '', :class => 'form-horizontal'} do |f| %>
+
+    <%= f.fields_for :address do |ad| %>
+      <div id="names" class="row">
+        <div class="col-md-12 input-group" id="firstname">
+          <span class="input-group-addon" >
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </span>
+          <%= ad.text_field :firstname, class: 'form-control required', :placeholder =>Spree.t(:first_name) %>
+        </div>
+
+        <div class="col-md-12 input-group" id="lastname">
+          <span class="input-group-addon" >
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </span>
+          <%= ad.text_field :lastname, class: 'form-control required', :placeholder =>Spree.t(:last_name) %>
+        </div>
+
+        <div class="col-md-12 input-group" id="dni">
+          <span class="input-group-addon" >
+            <i class="fa fa-gavel" aria-hidden="true"></i>
+          </span>
+          <%= ad.text_field :dni, class: 'form-control required', :placeholder => Spree.t(:dni) %>
+        </div>
+      <% end %>
+      </div>
+      <div id="basicdata" class="row">
+      <%= f.fields_for :order do |ord| %>
+        <div class="col-md-12 input-group" id="secure-payments-email">
+          <span class="input-group-addon" >
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+          <%= ord.email_field :email, class: 'form-control required', :placeholder => Spree.t(:email) %>
+        </div>
+      <% end %>
+      </div>
+      <%= f.fields_for :adjustment do |adj| %>
+      <div id="secondarydata" class="row">
+        <div class="col-md-12 input-group" id="amount">
+          <span class="input-group-addon" >
+            <i class="fa fa-eur" aria-hidden="true"></i>
+          </span>
+          <%= adj.text_field :amount, class: 'form-control required number', :placeholder => Spree.t(:amount) %>
+        </div>
+
+        <div class="col-md-12 input-group" id="invoice_number">
+          <span class="input-group-addon" >
+            <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+          </span>
+          <%= adj.text_field :label, class: 'form-control required', :placeholder =>Spree.t(:invoice_number) %>
+        </div>
+      </div>
+      <% end %>
+      <%= f.fields_for :order do |ord| %>
+      <div class="row" id="specialinstructions">
+        <div class="col-md-12 input-group" id="invoice_number">
+          <span class="input-group-addon" >
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </span>
+          <%= ord.text_area :special_instructions, class: 'form-control', :placeholder => Spree.t(:description), :rows => 10 %>
+        </div>
+      </div>
+
+      <% end %>
+      <div class="row">
+        <div>
+          <%= recaptcha_tags({hl:I18n.locale}) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="checkbox required micro" id="label_online_invoice_payment_term_and_cond" for="online_invoice_payment_term_and_cond">
+            <input type="checkbox" id="online_invoice_payment_term_and_cond" name="online_invoice_payment[term_and_cond]" required="required" value="1" />
+            <%= link_to raw(Spree.t(:service_conditions)), '/condiciones-del-servicio', {:target => "_blank"} %>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <%= f.submit Spree.t(:save_and_continue), :id => 'online_invoice_payment_submit', :class => 'btn btn-primary btn-lg', :title => Spree.t(:save_and_continue) %>
+        </div>
+      </div>
+    <% end %>
+    <% content_for :head do %>
+          <script>
+            $(document).ready(function(){
+              $('#new_online_invoice_payment').validate();
+            });
+          </script>
+      <% if I18n.locale != :en %>
+          <script src="<%= assets_prefix %>/jquery.validate/localization/messages_<%= I18n.locale.to_s.downcase.gsub("-", "") %>.js"></script>
+      <% end %>
+  <% end %>

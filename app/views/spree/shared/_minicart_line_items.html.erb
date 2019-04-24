@@ -1,0 +1,35 @@
+<li>
+  <div id="item_product_detail" class="<%= cycle('', 'alt') %> line-item">
+      <div class="minicart-item-image" data-hook="minicart_item_image">
+        <% if variant.images.length == 0 %>
+            <%= link_to image_tag(variant.product.display_image.attachment(:small)), variant.product %>
+        <% else %>
+            <%= link_to image_tag(variant.images.first.attachment.url(:mini)), variant.product %>
+        <% end %>
+      </div>
+      <div class="minicart-item-description" data-hook="minicart_item_description">
+        <h6><%= link_to line_item.name, product_path(variant.product) %></h6>
+        <span id="variant_options"> <%= variant.options_text %> </span>
+        <% if line_item.insufficient_stock? %>
+            <span class="out-of-stock">
+              <%= Spree.t(:out_of_stock) %>
+            </span>
+        <% end %>
+      </div>
+      <div class="minicart-item-delete" data-hook="minicart_item_delete">
+        <%= link_to '<i class="fa fa-trash" aria-hidden="true"><span class="hidden">&nbsp;</span></i>'.html_safe, '#', :class => 'minicart_remove', :id => "delete_#{dom_id(line_item)}" %>
+      </div>
+      <div class="minicart-item-price" data-hook="minicart_item_price">
+        <%= display_cost_price(line_item.variant.product) %>
+        <span class="price selling <%= (percentage(line_item,line_item.variant.product.id) > 0 && line_item.variant.product.promotionable && line_item.variant.product.price > 0) ? 'sales' : nil %>"><%= display_price(line_item.variant.product) %></span>
+      </div>
+      <div class="minicart-item-quantity" data-hook="minicart_item_quantity">
+        <%= item_form.number_field :quantity, :min => 1, :class => "line_item_quantity", :size => 2 %>
+        <div class="loading"></div>
+      </div>
+      <div class="minicart-item-total" data-hook="minicart_item_total">
+        <%= to_money(item_display_price(line_item)) %>
+      </div>
+
+  </div>
+</li>

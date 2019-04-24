@@ -1,0 +1,28 @@
+<% content_for :sidebar do %>
+  <div id='page_sidebar_navigation' class='col-md-2 col-lg-2 hidden-xs hidden-sm' data-hook='page_sidebar_navigation'>
+    <ul id='sidebar-menu'>
+      <%= render partial: 'spree/shared/sidebar_taxonomies' %>
+    </ul>
+  </div>
+<% end %>
+<% if @taxon.description.present? %>
+	<% content_for :taxon_text do %>
+	  	<div id='taxon-header' class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-2 col-lg-offset-2">
+			<h1 class="taxon-title"><%= @taxon.name %></h1>
+			<p><%= raw(@taxon.description) %></p>
+		</div>
+	<% end %>
+<% end %>
+
+<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-2 col-lg-offset-2">
+	<div class='taxon_products' data-hook="taxon_products">
+		<% unless @taxon.parent.present? %>
+	  		<h2 class="subtaxon-title"><%= link_to @taxon.name, seo_url(@taxon), class: 'breadcrumbs' %></h2>
+	  	<% end %>
+	  <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+	</div>
+</div>
+
+<% content_for :scripts do %>
+  <%= render :partial => 'spree/shared/jquery_lazy' %>
+<% end %>

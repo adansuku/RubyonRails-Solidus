@@ -1,0 +1,261 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  number:
+    percentage:
+      format:
+        precision: 0
+  ## Kaminiari pagination ##
+  views:
+    pagination:
+      first: "&laquo; Primera"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Siguiente &rsaquo;"
+      truncate: "&hellip;"
+  ## End Kaminiari pagination ##
+  ## scopes order ##
+  navigation: Tu navegador no soporta este tipo de videos
+  order_scope_word: Orden
+  order_scope_relevance: Popularidad
+  order_scope_descend_by_master_price: Precio - Mayor a Menor
+  order_scope_ascend_by_master_price: Precio - Menor a Mayor
+  order_scope_ascend_by_name: Nombre (A - Z)
+  order_scope_descend_by_name: Nombre (Z - A)
+  order_scope_descend_by_updated_at: Novedad
+  ## End scopes order ##
+  site_by: "Site by <strong>2beDigital</strong>"
+  bookmark_or_share_this: "Comparte o añade a tus favoritos"
+  ## Order ##
+  shipment_details: "Detalles de envío"
+  order_already_updated: El pedido ya ha sido actualizado.
+  new_order_completed: " Nueva compra completada"
+  thanks_for_shopping_with_us: "Gracias por tu compra"
+  share_the_news: "Comparte con tus amigos."
+  order_summary_and_email_txt: " para ver el resumen del pedido. Recibirás una copia también via email."
+  order_processed_successfully: "Tu pedido ha sido procesado con éxito"
+  click_the_order_number: "Haz click aquí"
+  activerecord:
+    attributes:
+      spree/order:
+        approved_at: Finalizado
+        approver: Finalizado por
+      spree/return_item:
+        state: Estado
+        charged: Cargado
+      spree/return_authorization:
+        state: Estado
+        number: Numero
+        created_at: Creado en
+  spree:
+    reimbursement_mailer:
+      reimbursement_email:
+        subject: "Notificación de reembolso de Florentino"
+    state_machine_states:
+      accepted: Aceptado
+      address: Dirección
+      authorized: Autorizado
+      awaiting: En espera
+      awaiting_return: Esperando regreso
+      backordered: Pedido pendiente
+      canceled: Cancelada
+      cart: Carrito
+      checkout: Pedido
+      closed: Cerrado
+      complete: Completo
+      completed: Completado
+      confirm: Confirmado
+      delivery: Entrega
+      errored: Erróneo
+      failed: Fallido
+      given_to_customer: Entregado al comprador
+      invalid: Inválido
+      manual_intervention_required: Requiere intervención manual
+      on_hand: A mano
+      open: Abierto
+      order: Orden
+      payment: Pago
+      pending: Pendiente
+      processing: Procesando
+      ready: Listo
+      reimbursed: Reembolsado
+      resumed: Continuado
+      returned: Retornado
+      shipped: Enviado
+      void: Nulo
+    email_or_name_or_lastname: Email ó Nombre ó Apellidos
+    finished: Finalizado
+    in_progress: En progreso
+    approve: Finalizar
+    approver: Finalizado por
+    approved_at: Finalizado en
+    company: "Empresa o nombre fiscal"
+    selected_quantity_not_available: "Cantidad seleccionada no disponible"
+    variant_options_select: Selecciona una opción
+    select_a: "%{name}: "
+    preview: Previsualización
+    attach: Anexar
+    detach_image: Borrar Imagen
+    select_a: "%{name}: "
+    select_a_return_authorization_reason: Selecciona un motivo de devolución
+    select_a_stock_location: Selecciona una localización de stock
+    one_option_per_type_must_be_selected: Debe seleccionar al menos una opción
+    choose_a_taxon_to_sort_products_for: "Escoge un taxon para ordenar sus productos"
+    click_and_drag_on_the_products_to_sort_them: Haz clic y arrastre en los productos para ordenarlos
+    find_a_taxon: Busca un Taxon
+    finalized: Finalizado
+    shipment_adjustments: "Ajustes de envío"
+    shipment_details: "Desde %{stock_location} vía %{shipping_method}"
+    backordered: "En rotura de stock"
+    cart_subtotal: Subtotal
+    street_address: Dirección
+    street_address_2: Dirección (cont.)
+    listing_orders: Listado de Pedidos
+    choose_location: Elija ubicación
+    existing_shipments: Envíos existentes
+    new_shipment_at_location: Nuevo envío en la ubicación
+    ident_fiscal: Identificación fiscal
+    order_already_updated: Orden actualizada
+    shipping_total: Total del envio
+    incl: incl.
+    ## Info Company Módulo facturas ##
+    company_name: Florentino Colección, S.L.
+    company_direction: Pol. Ind. Lalín 2000, Calle B 30-34
+    company_codezip: "C.P.: 36500"
+    company_state: Lalín (Pontevedra) - España
+    company_phone: "Tel: +34 986 787 050"
+    company_ident_fiscal: "CIF: ESB36057933"
+    ident_fiscal: "Identificación fiscal"
+    zip: Codigo Postal
+    customer_invoice: FACTURA
+    invoice_number: "Factura:"
+    order_total: Total
+    show: Ver
+    add_to_cart: Añadir a la cesta
+    your_cart_is_empty: Tu cesta está vacía
+    composition_and_care : Composición y cuidados
+    shipping_and_return: Envios y devoluciones
+    shipping_and_return_conditions: "El plazo de entrega para envíos nacionales es de 3 a 5 días laborables salvo para las Islas Baleares que será de 5 a 7 días laborables, para envíos internacionales el plazo de entraga es de 5 a 7 días laborables. Para efectuar cambios y devoluciones dispone de 15 días naturales."
+    store_locator: Tiendas
+    help: Ayuda
+    featured_product: Producto destacado
+    buy_more_for_free_shipments: "Aún te faltan %{parameter}€ para tener el envío gratuíto"
+    free_shipments: Envío gratuito
+    store_locator:
+      title: Tiendas Físicas
+      menu: Tiendas Físicas
+    size_guide: 'Descubre tu talla'
+    dear_customer: 'Hola'
+    thanks: '¡Muchas gracias por tu compra en Florentino!'
+    service_conditions: "Consulte las Condiciones del Servicio haciendo clic <a href='https://www.florentino.com/terminos-y-condiciones' style='color:#c89a4a;'>aquí</a>."
+    service_info: 'Para cualquier duda o incidencia contacte con Att. al cliente en el +34 986 787 050 o en'
+    service_note: "Nota: Este e-mail se ha enviado desde una dirección de notificación que no acepta mensajes de correo electrónico entrantes. Por favor, no responda a este mensaje."
+    greeting: 'Atentamente,'
+    team: 'Equipo Florentino'
+    date: 'Fecha'
+    order_id: 'Id. del pedido'
+    order: 'Pedido'
+    ship_address: 'Dirección de envío'
+    payment_method: 'Método de pago'
+    at_customer: 'Atención al cliente'
+    deliver_date: 'Plazos de entrega'
+    deliver_date_info: '3 a 5 días'
+    safe_payment: 'Pago <br/>seguro'
+    safe_payment_info: 'Visa, Mastercard,...'
+    return_and_exchange: 'Cambios y devoluciones'
+    return_and_exchange_info: '15 días'
+    picked: Recogida en tienda
+    picked_info: 'Haz tu pedido online y recogelo en tu tienda más cercana'
+    arrangments: Arreglos gratis en tienda
+    arrangments_info: 'Todo te quedará perfecto, ¡por que los arreglos son gratuitos!'
+    all_rights_reserved: Todos los derechos reservados.
+    mundo_florentino: Mundo Florentino
+    editorial: Editorial
+    international_shops: Tiendas Internacionales
+    national_shops: Tiendas Nacionales
+    enter_address: Buscar tienda más cercana
+    address_or_zipcode: Dirección o codigo postal
+    dni: DNI/NIF
+    birth_day: Fecha de nacimiento
+    request_invoice: Solicitar factura
+    sent_as_a_gift: ¿Enviar como regalo?
+    order_notice: Información sobre el pedido.
+    sent_as_a_gift_info: Este pedido debe ser enviado como regalo.
+    request_invoice_info: El cliente solicita factura del pedido.
+    Picked_up_at_store: ¿Recogida en tienda?
+    picked_store: Recogida en tienda
+    select_picked_store: Seleccione tienda de recogida
+    picked_store_selected: Tienda de recogida seleccionada
+    secure_payments: Pago seguro
+    online_invoice_payment_description: "Este servicio le proporciona a nuestros clientes la posibilidad de realizar un pago mediante tarjeta de crédito de una forma totalmente segura."
+    name_or_sku: SKU (introduzca al menos los primeros 4 caracteres del sku del producto)
+    edit_my_account: Editar mi cuenta
+    show_more: Ver todo
+    bespoke_tailoring: Solicitud de sastrería a medida
+    return_authorization_authorized_mail: Hemos recibido correctamente tu solicitud de devolución.
+    return_authorization_text_mail: "En los próximos días una agencia de transporte pasará por la dirección indicada a recoger tu paquete.<br/><br/>Prepara tu devolución: introduce en la caja los artículos que deseas devolver. Tacha o elimina cualquier etiqueta de la caja original para evitar un error en el envío. Entrega al transportista el paquete cerrado y embalado correctamente.<br/><br/>Reembolso: una vez recibido el paquete en nuestras instalaciones y comprobado el perfecto estado de los artículos, se te devolverá el importe excluyendo los gastos de devolución, que serán los siguientes:<br/>España Península: 5,99 €<br/>España Baleares: 12,99 €<br/>Europa: 19,99 €"
+    reimbursement_text_mail: 'Tu devolución ha sido aceptada.<br/><br/>Recibirás el importe en el método de pago original en un plazo máximo de 3 días laborables, dependiendo de tu banco.'
+    ## End Módulo facturas ##
+    admin:
+      tab:
+        display_order: Ordenar Taxon
+        menu: Tiendas físicas
+        blog: Blog
+    stores: Tiendas
+    i18n:
+      this_file_language: Español (ES)
+    login_as_existing: "Inicia Sesión"
+    create_a_new_account: "Crea tu cuenta"
+    new_customer: "Crea tu cuenta"
+    addressErrorAlert: No se puede encontrar la dirección
+    autoGeocodeErrorAlert: No podemos obtener su ubicación. Por favor, complete su dirección o código postal.
+    distanceErrorAlert: Desafortunadamente, nuestra tienda más cercana esta a más de
+    noResultsTitle: Sin resultados
+    noResultsDesc: No se encontraron tiendas con los criterios dados. Por favor introduzca otra opción.
+    kilometerLang: kilometro
+    kilometersLang: kilometros
+    click_here: Haz click aquí.
+    send_gift_text: Añadir mensaje
+    without_message: Sin mensaje
+    secure_paymets: Pago Seguro
+    message: Mensaje
+    order_mailer:
+      confirm_payment:
+        subject: Confirmación de pago realizado.
+    payment_success: Pago realizado con exito.
+    user_mailer:
+      welcome:
+        thanks: Gracias por registrarte en
+        subject: '!Bienvenid@!'
+        enjoy: Deseamos que disfrutes de tus compras
+    featured_tag: Etiqueta destacada
+  devise:
+    user_registrations:
+      spree_user:
+        mail_in_use: Ya hay un usuario registrado con ese email o las contraseñas no coinciden
+    failure:
+      invalid: Email o contraseña no válidos.
+  order_by: Ordenar por
+  signup_title: Iniciar Sesión
+  you_may_also_like: Te puede interesar
+  complete_your_look: Completa tu look
+  our_favorite_products: Nuestros favoritos

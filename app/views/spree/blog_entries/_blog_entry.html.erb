@@ -1,0 +1,16 @@
+<div class="grid-item blog-entry">
+	<div class="col-md-12 blog_image">
+		<% if blog_entry.blog_entry_image.present? %>
+		<figure class="effect-duke">
+			<%= image_tag blog_entry.blog_entry_image.attachment.url(:large), class: 'masonry_img' %>
+		</figure>
+	    <% end %>
+	</div>
+	<h2><%= link_to blog_entry.title.upcase, blog_entry_permalink(blog_entry) %></h2>
+	<div class="col-md-12">
+		<%== blog_entry.entry_summary %>
+	</div>
+	</br>
+  	<%= render partial: 'spree/blog_entries/blog_entry_details', locals: { blog_entry: blog_entry } %>
+  	<div class="blog_read_more"><%= link_to Spree.t(:blog_read_more), blog_entry_permalink(blog_entry), class: 'btn btn-success' %></div>
+</div>

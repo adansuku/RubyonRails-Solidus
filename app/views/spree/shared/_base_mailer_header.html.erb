@@ -1,0 +1,359 @@
+<style>
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(https://fonts.gstatic.com/s/vollkorn/v8/0yb9GDoxxrvAnPhYGxkkaE0GrQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(https://fonts.gstatic.com/s/vollkorn/v8/0yb9GDoxxrvAnPhYGxktaE0GrQ.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(https://fonts.gstatic.com/s/vollkorn/v8/0yb9GDoxxrvAnPhYGxkqaE0GrQ.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(https://fonts.gstatic.com/s/vollkorn/v8/0yb9GDoxxrvAnPhYGxkmaE0GrQ.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(https://fonts.gstatic.com/s/vollkorn/v8/0yb9GDoxxrvAnPhYGxknaE0GrQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Vollkorn Regular'), local('Vollkorn-Regular'), url(https://fonts.gstatic.com/s/vollkorn/v8/0yb9GDoxxrvAnPhYGxkpaE0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+  body,div,table,p,a,tr,td,span,h1,h2,h3,h4,h5,h6{
+    font-family: 'Lato', sans-serif !important;
+  }
+  img{float:none;}
+  .icono{ display: inline-block; vertical-align: middle; width: 20px; height: 20px}
+  .logo{ padding: 10px; display: inline-block; width: 220px; height: 82px; vertical-align: middle;}
+  a#logo{display: inline-block;text-align: center; width:100%;}
+  a:hover,
+  a:active,
+  a:visited {
+    color: #000 !important;
+  }
+  h1.title{
+    text-align: center;
+    font-size: 26px;
+    padding: 10px 0px 20px 0px;
+    font-family: 'Vollkorn', serif !important;
+    color: #c89a4a;
+    text-transform: uppercase;
+  }
+  table{
+      width:680px;
+  }
+  tr#header{
+      background-color: #ffffff !important;
+      text-align: right;
+  }
+  table#show_order,
+  table#order_detail{
+      width: 650px;
+  }
+  table#order_detail{
+      margin-left: 15px;
+  }
+
+  a.order_url{
+      border-radius: 2px;
+      padding: 5px !important;
+      font-size: 18px !important;
+  }
+  a.order_url:hover,
+  a.order_url:focus{
+      text-decoration: underline !important;
+      color: #000 !important;
+  }
+  td.six.sub-columns{
+      padding: 10px 10px 10px 0px !important;
+  }
+
+  td.total_product{
+      float:right;
+      padding: 40px 0px 10px !important;
+  }
+  td.total{
+      float:right;
+  }
+  td.variant_sku{
+    padding-top:10px !important;
+  }
+
+  td{
+      vertical-align: middle !important;
+  }
+  table#footer{
+      background: #f4f4f4 !important;
+  }
+
+  .center{
+      text-align: center;
+      font-weight: bolder;
+      margin-top: 20px;
+      padding: 0px !important;
+  }
+  ul.social{
+     padding: 0;
+     list-style: none;
+     vertical-align: middle;
+     width:100%;
+  }
+  ul.social li a{
+      color: black !important;
+  }
+  .fb,
+  .tw,
+  .pi,
+  .ig,
+  .newsletter{
+      display: inline-block !important;
+      vertical-align: inherit !important;
+      padding: 0px 10px;
+  }
+  .name{
+      text-transform:capitalize;
+  }
+
+  #order_detail p{
+    text-align: center;
+  }
+  .icono-footer{
+    width:50% !important;
+  }
+  .icono-footer-2{
+    width:22% !important;
+  }
+  .hamburguer-icon{
+    width:30px !important;
+    height:30px !important;
+  }
+  .center-white-footer{width:100%;display:flex;justify-content: center;background-color: white; text-align:center;}
+  .center-footer{width:100%;display:flex;justify-content: center;text-align:center;}
+  .text-center{text-align:center}
+  .label-navcheckbox{display:none;}
+  .links-menu{
+    font-size:10px;
+    font-family:arial,sans-serif;
+    color:#333333;
+    font-weight:bold;
+    text-decoration:none;
+    text-transform:uppercase;
+    margin: 0px 5px;
+  }
+  .th-menu{
+    height: auto;
+  }
+  p.center-padding{
+    text-align:center; 
+    padding:50px 0px 0px 0px;
+    width:100%;
+  }
+
+  span.team-florentino{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .product_name{
+    padding-left:10px !important;
+  }
+
+  /*  Media Queries */
+  @media only screen and (max-width: 700px) {
+    table{
+        width: 100% !important;
+    }
+    table#order_detail{
+        margin-left: 0px !important;
+    }
+    table[class="body"] table.columns td{ 
+      width: auto !important;
+      padding: 0px 4px !important;
+      font-size: 10px !important;
+      float: none !important;
+    }
+    td.total_product,
+    td.total{
+        text-align: right !important;
+    }
+    ul.social li.newsletter{
+        margin: 0px !important;
+        font-size: 12px !important;
+    }
+  table[class="body"] img.icono { width: 20px !important; height: 20px !important;}
+
+  table[class="body"] img.logo{ width: 135px !important; height: 51px !important; }
+
+  input#navcheckbox { display:none; }
+
+  #main-table-menu-responsive{ width:100% !important;}
+
+  .label-navcheckbox{display:inline !important;}
+
+  #navcontainer{
+    position:relative;
+  }
+
+
+  #navcontainer th{
+    display:block;
+    width: 100%;
+    border-bottom:2px solid #ffffff;
+    height:18px;
+    padding: 10px 0px;      
+  }
+
+  #menucontainer{
+    position:relative;
+    overflow:hidden;
+  }
+
+  #navcontainer table{
+    margin-top:-500px;
+    -ms-transition: margin-top .5s ease-in-out;
+    -webkit-transition: margin-top .5s ease-in-out;      
+  }
+
+  /* checkbox mechanism */
+  #navcheckbox:checked + table{
+    margin-top:0%;
+  }      
+
+  /* fallback hover mechanism */
+  .nav-over,.nav-under{
+   display:block !important;
+   max-height:none !important;
+   padding-top:3px;
+   padding-bottom:3px;
+  } 
+
+  .nav-over img,.nav-under img{
+   display:block;
+   float:right;
+   margin-right:5px;
+  } 
+  .nav-over{
+   -ms-transition-delay: 1.5s;
+   -webkit-transition-delay: 1.5s;            
+  }
+
+  #navcontainer > .nav-over:hover + div table{
+    margin-top:0% !important;
+  }
+
+  #navcontainer > .nav-over:hover{
+    visibility:hidden;
+  }
+  .links-menu{ 
+    width:100%;
+    padding:10px;
+    display:block;
+  }
+}
+
+</style>
+
+<table>
+  <tr>
+    <td class="center">
+        <table>
+          <tr>
+            <td>
+              <table>
+                <tr id="header">
+                  <td>
+                    <%= link_to @store.url, id: 'logo' do %>
+                      <img src="<%= @store.url + image_path(Spree::Config.logo) %>" alt="logo" class='logo'>
+                    <% end %>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+    </td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td align="center">
+  <table width="600" border="0" cellspacing="0" cellpadding="0" align="center" class="main-table" id='main-table-menu-responsive'>
+    <tr><td>
+      <div id="navcontainer">
+        <!--[if !mso 9]><!-->
+        <label class='label-navcheckbox' for="navcheckbox">
+        <span style='width: 100%;text-align: right;position: absolute;margin-top: 8px;right: 50px;font-size: 20px;'>MENU</span>
+        <div class="nav-under" style="display:none;overflow:hidden;max-height:0px;background-color:#ffffff;"><img class='hamburguer-icon' src="https://s3.amazonaws.com/base-prototype-staging/images-for-mailing/hamburger-black.png" width="30" height="30" alt="Show Menu" border="0"></div>
+        <div class="nav-over" style="display:none;overflow:hidden;max-height:0px;position:absolute;top:0px;width:100%;opacity:0
+        "><img class='hamburguer-icon' src="https://s3.amazonaws.com/base-prototype-staging/images-for-mailing/hamburger-black.png" width="30" height="30" alt="Show Menu" border="0"></div>
+        </label>
+        <!--<![endif]-->
+        <div id="menucontainer">
+        <!--[if !mso 9]><!--><input id="navcheckbox" type="checkbox" style="display:none !important;"><!--<![endif]-->
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="width:100% !important">
+            <tr>
+              <th class='th-menu' align="center" valign="center">
+                <% @taxonomies.each do |taxonomy| %>
+                  <% if taxonomy.root.available? %>
+                    <%= link_to( taxonomy.name , @store.url + spree.nested_taxons_path(taxonomy.root), target: "_blank",class: 'links-menu')%>
+                  <% end %>
+                <% end %>
+                <% @pages.each do |page| %>
+                  <%= link_to( page.title , @store.url + "#{page.slug}", target: "_blank", class: 'links-menu' )%>
+                <% end %>
+              </th>          
+            </tr>
+        </table>
+        </div>
+      </div><BR>
+      </td>
+      </tr>
+  </table>
+  </td>
+  </tr>
+</table>

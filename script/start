@@ -1,0 +1,23 @@
+#!/bin/ash
+
+bundle check || bundle install
+#bundle exec rails s -b 0.0.0.0
+#bundle exec rake railties:install:migrations
+#bundle exec rake db:create db:migrate
+#bundle exec rake db:migrate
+#bundle exec rake db:seed
+#bundle exec rake spree_sample:load
+#bundle exec rake db:migrate
+#bundle exec rake db:migrate:status
+#bundle exec rake railties:install:migrations
+#bundle exec bin/rails server webrick -b 0.0.0.0 -p 3000 -e development
+
+#script/delayed_job restart >> log/delayed_jobs.log 2>&1 &
+# Alpine cron job service: https://wiki.alpinelinux.org/wiki/Alpine_Linux:FAQ#My_cron_jobs_don.27t_run.3F
+bundle exec whenever --update-crontab florentino &
+crontab - && crond -f -L - &
+bundle exec puma -C config/puma.rb
+
+
+
+

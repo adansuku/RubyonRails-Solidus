@@ -1,0 +1,169 @@
+/*******TABS*******/
+.nav-pills li{
+  width: 19.7%;
+  text-align: center;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+  color: #3b3b3b;
+  background-color: white;
+}
+
+.nav-pills > li > a{
+  border-radius: 0px;
+}
+
+a[data-toggle]{
+  text-decoration: none;
+}
+
+a[data-toggle]:hover{
+  text-decoration: underline;
+}
+
+.nav-pills{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+a:visited{
+  color: orange;
+}
+
+/*******TABLE**********/
+
+.size-title{
+  color: $base-color;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+th{
+  border: none;
+}
+
+.table-title, .table-title-static{
+  text-align: center;
+  background-color: $gray-lighter;
+
+}
+
+.table-title td, .table-title-static td{
+  border-bottom: 1px solid $black;
+
+}
+
+.table-striped{
+  margin-top: 40px;
+  background-color: white;
+}
+
+#table-size td{
+  background-color: $white;
+  border-bottom: 1px solid $black;
+  text-align: center;
+}
+
+.table > thead > tr > th {
+  border-bottom: 1px solid #000;
+}
+
+.title-mobile{
+  display: none;
+}
+
+.align-left{
+  text-align: left !important;
+}
+
+
+/***** MODAL ******/
+ .modal-header {
+  text-align: center;
+    padding: 15px;
+    border-bottom: 0px solid #e5e5e5;
+    min-height: 16.42857px;
+}
+.modal-header h4,
+.modal-header button {
+  display: inline-block;
+}
+.modal-title {
+  margin: 0;
+  line-height: 2.42857;
+}
+.modal.in .modal-dialog{
+  width:90%;
+  min-width:80%;
+}
+
+p.size-guide{
+    margin-top: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+#button-guide{
+  padding: 0px 6px;
+  color: $white;
+  background: $base-color;
+  border-radius: 50%;
+  font-weight: 600;
+  border: none;
+  margin-right: 10px;
+  &:hover{
+    background: $black;
+  }
+}
+
+@media #{$desktop-down} {
+  .table{
+    margin-left: 0px;
+  }
+
+  .content{
+    margin-top: 70px;
+  }
+
+  .title-mobile{
+    background-color: $gray-lighter;
+    padding: 20px;
+    text-align: center;
+    display: block;
+  }
+
+  .table-title{
+    display: none;
+  }
+
+  .nav-pills li{
+    width: 100%;
+    margin-bottom: 0px;
+
+  }
+
+  .tab-content{
+    overflow: auto;
+  }
+
+  .table-striped{
+    margin-top: 30px;
+    background-color: white;
+    margin: 0px 0px 5px 0px;
+    border: none;
+  }
+
+  #table-size td{
+    font-size: 0.75em;
+    padding: 6px 0px 6px 0px !important;
+  }
+}
+
+@media #{$tablet-down} {
+ .nav-pills{
+  flex-direction: column;
+ }
+}

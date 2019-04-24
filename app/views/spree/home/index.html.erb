@@ -1,0 +1,21 @@
+<% content_for :head do %>
+    <script src='https://cdn.rawgit.com/HubSpot/pace/v1.0.2/pace.min.js'></script>
+    <%= render_snippet('/home-cat-images') %>
+<% end %>
+
+<% content_for :slider do %>
+
+    <%= render_snippet('/video-home') %>
+    <%= render_snippet('/slider-mobile') %>
+
+<% end %>
+
+<%= render_snippet('/landing') %>
+
+<% content_for :templates_full_width do %>
+    <%= render partial: 'spree/shared/featured_products' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= render :partial => 'spree/shared/jquery_lazy' %>
+<% end %>

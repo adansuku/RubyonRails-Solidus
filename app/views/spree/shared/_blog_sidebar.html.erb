@@ -1,0 +1,8 @@
+<div id='page_sidebar_navigation' class='col-md-2 col-lg-2 hidden-xs hidden-sm' data-hook='page_sidebar_navigation'>
+	<ul id='sidebar-menu'>
+	  <%= render 'spree/blog_entries/categories_list' %>
+	  <%= render 'spree/blog_entries/tag_cloud' %>
+	  <%= render 'spree/blog_entries/recent_blog_entries', recent_blog_entries: Spree::BlogEntry.recent(10) %>
+	  <%= render 'spree/blog_entries/news_archive', news_archive: Spree::BlogEntry.organize_blog_entries %>
+	</ul>
+</div>

@@ -1,0 +1,34 @@
+development: &default
+  #url: <%= ENV['DATABASE_URL'] %>
+  adapter:  <%= ENV['db_adapter'] %>
+  database: <%= ENV['db_database'] %>
+  host:     <%= ENV['db_host'] %>
+  port:     <%= ENV['db_port'] %>
+  username: <%= ENV['db_username'] %>
+  password: <%= ENV['db_password'] %>
+  pool:     <%= ENV['db_pool'] %>
+  encoding: <%= ENV['db_encoding'] %>
+  variables:
+    sql_mode: TRADITIONAL
+test:
+  <<: *default
+staging:
+  adapter:  <%= ENV['db_adapter'] %>
+  database: <%= ENV['db_database'] %>
+  host:     <%= ENV['db_host'] %>
+  port:     <%= ENV['db_port'] %>
+  username: <%= ENV['db_username'] %>
+  password: <%= ENV['db_password'] %>
+  pool:     <%= ENV['db_pool'] %>
+  slca:     <%= ENV['db_slca'] %>
+  encoding: <%= ENV['db_encoding'] %>
+production:
+  adapter:  <%= ENV['db_adapter'] %>
+  database: <%= ENV['db_database'] %>
+  host:     <%= ENV['db_host'] %>
+  port:     <%= ENV['db_port'] %>
+  username: <%= ENV['db_username'] %>
+  password: <%= ENV['db_password'] %>
+  pool:     <%= ENV['db_pool'] %>
+  slca:     <%= ENV['db_slca'] %>
+  encoding: <%= ENV['db_encoding'] %>

@@ -1,0 +1,13 @@
+<% tags = Spree::BlogEntry.visible.tag_counts_on(:tags) %>
+<% if tags.present? %>
+  	<%= content_tag :li, :class => 'dropdown' do %>
+	    <%= link_to( Spree.t('blog.tags') , '#', :data => { :toggle => 'dropdown' }, :class => "dropdown-toggle", :role => 'button' ) %>
+	    <ul class="dropdown-menu secondary-list-sidebar">
+		    <% tags.each do |tag| %>
+		      <li>
+		        <%= link_to tag.name, blog_tag_path(tag.name), :class => cycle('css1','css2','css3','css4')  %>
+		      </li>
+		    <% end %>
+	    </ul>
+	<% end %>
+<% end %>

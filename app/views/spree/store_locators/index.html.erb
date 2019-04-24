@@ -1,0 +1,100 @@
+<div class="row" id='store-locator-content'>
+  <div class="col-xs-12 col-md-8" id='store-locator-map' >
+    <div class="bh-sl-container">
+      <div id="map-container" class="bh-sl-map-container">
+        <div class="row">
+          <div id="map-results-container" class="container">
+            <div id="bh-sl-map" class="bh-sl-map col-md-12"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+    <div class="col-xs-12 col-md-4" id='store-locator-text'>
+    <%= render_snippet('/store_locator_shops') %>  
+    <div class="bh-sl-form-container">
+      <form id="bh-sl-user-location" class="form-group" method="post" action="#" role="form">
+        <div class="form-input form-group">
+          <label for="bh-sl-address"><%= Spree.t(:enter_address) %></label>
+          <input class="form-control" type="text" id="bh-sl-address" name="bh-sl-address" placeholder="<%= Spree.t(:address_or_zipcode) %>" />
+        </div>
+        <button id="bh-sl-submit" class="btn btn-success" type="submit"><%= Spree.t("actions.continue") %></button>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <%= select_tag Spree.t(:national_shops), options_from_collection_for_select(Spree::StoreLocator.with_translations.where('spree_store_locator_translations.country IN (?)',['España','Spain']).position_ordered, "address1", "name"), prompt: Spree.t(:national_shops), class: "form-control select_tag", id: 'national-shops' %>
+      </div>
+      <div class="col-xs-12 col-md-12">
+        <%= select_tag Spree.t(:international_shops), grouped_options_for_select(group_by_country), prompt: Spree.t(:international_shops), class: "form-control select_tag", id: 'international-shops' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="bh-sl-container">
+        <div class="bh-sl-map-container">
+          <div class="bh-sl-loc-list col-md-12">
+            <ul class="list list-unstyled"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<% content_for :foot do %>
+  <script>
+    var latitude = 40.4378698;
+    var longitude = -3.8196207;
+    
+    $('#international-shops').change(function(){
+        address = $(this).find('option:selected').val();
+        $('#bh-sl-address').val(address);
+        $('#bh-sl-submit').submit(); 
+        $(this).val($(this).find('option').first().val());
+    });
+
+    $('#national-shops').change(function(){
+        address = $(this).find('option:selected').val();
+        $('#bh-sl-address').val(address);
+        $('#bh-sl-submit').submit(); 
+        $(this).val($(this).find('option').first().val());
+    });
+
+    $(document).ready(function() {
+      function success(pos) {
+        var crd = pos.coords;
+        latitude = crd.latitude;
+        longitude = crd.longitude;
+      }
+
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error);
+    });
+
+    setTimeout(function(){
+      return $('#map-container').storeLocator({
+        dataType: 'json',
+        dataLocation: '/store_locator.json',
+        lengthUnit: 'km',
+        defaultLoc: true,
+        defaultLat: latitude,
+        defaultLng: longitude,
+        slideMap: false,
+        addressErrorAlert: '<%= Spree.t(:addressErrorAlert) %>',
+        kilometerLang: '<%= Spree.t(:kilometerLang) %>',
+        kilometersLang: '<%= Spree.t(:kilometersLang) %>',
+        autoGeocodeErrorAlert: '<%= Spree.t(:autoGeocodeErrorAlert) %>',
+        distanceErrorAlert: '<%= Spree.t(:distanceErrorAlert) %>',
+        noResultsTitle: '<%= Spree.t(:noResultsTitle) %>',
+        noResultsDesc: '<%= Spree.t(:noResultsDesc) %>'
+      });
+    }, 500);
+  </script>
+  <%= javascript_include_tag 'lib/handlebars-1.0.0' %>
+  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA_DAcajsSbOEiJpfQx1O3niSz1gOkTdeA' %>
+  <%= javascript_include_tag 'lib/jquery.storelocator' %>
+<% end %>

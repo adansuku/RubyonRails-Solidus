@@ -1,0 +1,22 @@
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<% @taxonomies = get_taxonomies unless @taxonomies.present?  %>
+<% unless @taxonomies.empty? %>
+    <% @taxonomies.each do |taxonomy| %>
+        <% css_class = ((@taxon && @taxon.root.id.equal?(taxonomy.root.id) && (is_some_path?(root_path) === 'not'))) ? 'dropdown active open' : 'dropdown' %>
+        <% cache(@taxon.present? ?  [I18n.locale, taxonomy, css_class, @taxon] : [I18n.locale, taxonomy, css_class] ) do %>
+            <%= content_tag :li, :class => css_class do %>
+            	<% if taxonomy.root.children.empty? && taxonomy.root.available? %>
+	                <%= link_to( taxonomy.name , seo_url(Spree::Taxon.find_by_id(taxonomy.root.id)) )%>              
+	            <% elsif taxonomy.root.available? %>
+	                <%= link_to( taxonomy.name ,seo_url(Spree::Taxon.find_by_id(taxonomy.root.id)) ) %>
+                    <%= content_tag :ul, class: 'dropdown-menu secondary-list-sidebar show-more' do %>
+                        <%= content_tag :li do %>
+                            <%= link_to( Spree.t(:show_more) , seo_url(Spree::Taxon.find_by_id(taxonomy.root.id)), class: @taxon.present? && @taxon.id.equal?(taxonomy.root.id) ? 'active' : nil )%>
+                        <% end %>
+                    <% end %>
+	                <%= taxons_sidebar(taxonomy.root, @taxon, max_level) %>
+	            <% end %>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>

@@ -1,0 +1,18 @@
+version: '2'
+services:
+   florentino_store:
+     image: 649368968528.dkr.ecr.eu-west-1.amazonaws.com/florentino_store:latest
+     ports:
+       - "0:3000"
+     environment:
+       - RAILS_ENV=production
+     hostname: florentino.com
+     cpu_shares: 512
+     mem_limit: 2G
+     command: ./script/start
+     logging:
+       driver: awslogs
+       options:
+         awslogs-group: ecs-solidus-pro
+         awslogs-region: eu-west-1
+         awslogs-stream-prefix: florentino.com

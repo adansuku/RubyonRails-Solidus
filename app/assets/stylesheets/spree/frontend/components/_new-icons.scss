@@ -1,0 +1,73 @@
+$icon-arrow-down: image_path("icon-arrow-down.png");
+$icon-arrow-up: image_path("icon-arrow-up.png");
+$icon-arrow-left: image_path("icon-arrow-left.png");
+$icon-arrow-right: image_path("icon-arrow-right.png");
+$icon-arrow-turn: image_path("icon-arrow-turn.png");
+$icon-cart: image_path("icon-cart.png");
+$icon-clock: image_path("icon-clock.png");
+$icon-cloth: image_path("icon-cloth.png");
+$icon-email: image_path("icon-email.png");
+$icon-hanger: image_path("icon-hanger.png");
+$icon-search: image_path("icon-search.png");
+$icon-truck: image_path("icon-truck.png");
+$icon-user: image_path("icon-user.png");
+$icon-location: image_path("icon-location.png");
+$icon-lock: image_path("icon-lock.png");
+$icon-facebook: image_path("icon-facebook.png");
+$icon-twitter: image_path("icon-twitter.png");
+$icon-youtube: image_path("icon-youtube.png");
+$icon-instagram: image_path("icon-instagram.png");
+$icon-vimeo: image_path("icon-vimeo.png");
+$icon-atencion: image_path("icon-atencion.png");
+$icon-recogida: image_path("icon-recogida.png");
+$icon-arreglos: image_path("icon-arreglos.png");
+$icon-loading: image_path("loading_icon.gif");
+
+.icon-arrow-down { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-arrow-down) no-repeat; background-size: 20px 20px; }
+.icon-arrow-up { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-arrow-up) no-repeat; background-size: 20px 20px; }
+.icon-arrow-left { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-arrow-left) no-repeat; background-size: 20px 20px; }
+.icon-arrow-right { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-arrow-right) no-repeat; background-size: 20px 20px; }
+.icon-arrow-turn { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-arrow-turn) no-repeat; background-size: 20px 20px; }
+.icon-cart { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-cart) no-repeat; background-size: 20px 20px; }
+.icon-clock { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-clock) no-repeat; background-size: 20px 20px; }
+.icon-cloth { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-cloth) no-repeat; background-size: 20px 20px; }
+.icon-email { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-email) no-repeat; background-size: 20px 20px; }
+.icon-hanger { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-hanger) no-repeat; background-size: 20px 20px; }
+.icon-search { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-search) no-repeat; background-size: 20px 20px; }
+.icon-truck { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-truck) no-repeat; background-size: 20px 20px; }
+.icon-user { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-user) no-repeat; background-size: 20px 20px; }
+.icon-location { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-location) no-repeat; background-size: 20px 20px; }
+.icon-lock { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-lock) no-repeat; background-size: 20px 20px; }
+.icon-facebook { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-facebook) no-repeat; background-size: 20px 20px; }
+.icon-twitter { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-twitter) no-repeat; background-size: 20px 20px; }
+.icon-instagram { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-instagram) no-repeat; background-size: 20px 20px; }
+.icon-vimeo { display: inline-block;vertical-align: middle; width: 20px; height: 20px; background: url($icon-vimeo) no-repeat; background-size: 20px 20px; }
+.icon-youtube { display: inline-block;vertical-align: middle; width: 30px; height: 30px; background: url($icon-youtube) no-repeat; background-size: 30px 30px; }
+.icon-atencion { display: inline-block;vertical-align: middle; width: 30px; height: 30px; background: url($icon-atencion) no-repeat; background-size: 30px 30px; }
+.icon-recogida { display: inline-block;vertical-align: middle; width: 30px; height: 30px; background: url($icon-recogida) no-repeat; background-size: 30px 30px; }
+.icon-arreglos { display: inline-block;vertical-align: middle; width: 30px; height: 30px; background: url($icon-arreglos) no-repeat; background-size: 30px 30px; }
+.icon-loading { display: inline-block;vertical-align: middle; width: 30px; height: 30px; background: url($icon-loading) no-repeat; background-size: 30px 30px; }
+
+
+.icon-small{
+	width: 10px;
+	height:10px;
+	background-size: 10px 10px;
+}
+
+.icon-1x{
+	width: 25px;
+	height:25px;
+	background-size: 25px 25px;
+}
+.icon-2x{
+	width: 40px;
+	height:40px;
+	background-size: 40px 40px;
+}
+
+.icon-3x{
+	width: 60px;
+	height:60px;
+	background-size: 60px 60px;
+}

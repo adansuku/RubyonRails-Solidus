@@ -1,0 +1,19 @@
+<% if SolidusI18n::Config.available_locales.many? %>
+  <div class="language-switcher">
+    <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenuLanguage">
+      <i class="fa fa-globe fa-lg" aria-hidden="true"></i>
+    </a>
+    <ul id="locale-dropdown" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuLanguage">
+      <% available_locales_options.each do |locale| %>
+          <%= content_tag(:li, :class => (I18n.locale == locale[1]) ? 'active' : 'not') do %>
+              <%= link_to locale[0].split(' ')[0], set_locale_path(:switch_to_locale => locale[1]), :tabindex => -1 %>
+          <% end %>
+      <% end %>
+    </ul>
+    <%= form_tag(set_locale_path) do %>
+        <noscript>
+          <%= submit_tag %>
+        </noscript>
+    <% end %>
+  </div>
+<% end %>

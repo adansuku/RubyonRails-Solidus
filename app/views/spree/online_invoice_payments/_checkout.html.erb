@@ -1,0 +1,23 @@
+<% content_for :head do %>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.12.1/dojo/dojo.js"></script>
+<% end %>
+<%=form_tag(@redsys.service_url, method: :post) do %>
+  <%= hidden_field_tag(:Ds_SignatureVersion, @payment_method.preferred_key_type) %>
+  <%= hidden_field_tag(:Ds_MerchantParameters, @redsys.create_Merchant_Parameters) %>
+  <%= hidden_field_tag(:Ds_Signature, @redsys.create_Merchant_Signature) %>
+  <%= submit_tag "Go to payment gateway!", :class => 'clear', :style => 'display:none;' %>
+<% end %>
+<% content_for :head do %>
+<script>
+    var back_url = "<%= edit_order_checkout_url(@order, :state => 'payment')%>";
+    dojo.ready(function(){
+      // We use dojo hash to control browser history in case of back button is pressed; only affects firefox and opera, pending ie test
+      require(["dojo/hash"], function(hash){
+          var currentHash = hash();
+          if (currentHash) { document.location.href = back_url; return; }
+          hash(back_url, true);
+          document.forms[0].submit();
+      });
+    });
+</script>
+<% end %>

@@ -1,0 +1,21 @@
+<% unless @product_properties.empty? %>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class='icon-cloth'></i><%= Spree.t(:description) %></a>
+    <ul class="dropdown-menu secondary-list-sidebar">
+      <li>
+        <table id="product-properties" class="table table-bordered table-striped" data-hook>
+          <tbody>
+            <% @product_properties.each do |product_property| %>
+              <% css_class = cycle('even', 'odd', :name => "properties") %>
+              <tr class="<%= css_class %>">
+                <td><strong></strong></td>
+                <td><%= product_property.value %></td>
+              </tr>
+            <% end %>
+            <% reset_cycle('properties') %>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+<% end %>

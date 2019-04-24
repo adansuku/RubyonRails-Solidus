@@ -1,0 +1,27 @@
+<% promotions = @product.possible_promotions %>
+<% if promotions.any? %>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i><%= Spree.t(:promotions) %>
+    </a>
+    <ul class="dropdown-menu secondary-list-sidebar">
+      <li>
+        <% promotions.each do |promotion| %>
+        <div>
+          <h4><%= promotion.name %></h4>
+          <p><%= promotion.description %></p>
+          <% if promotion.products.any? %>
+            <ul>
+              <% promotion.products.first(3).each do |product| %>
+                <li><%= link_to product.name, product_path(product) %></li>
+              <% end %>
+              <li>...</li>
+            </ul>
+          <% end %>
+        </div>
+        <% end %>
+
+      </li>
+    </ul>
+  </li>
+<% end %>

@@ -1,0 +1,73 @@
+<% content_for :foot do %>
+    <script>
+         window.onload = function() {
+            // Intensify all images on the page.
+            var elements = document.querySelectorAll( '.intense' );
+            Intense( elements );
+        }
+    </script>
+<% end %>
+<% content_for :scripts do %>
+  <%= render :partial => 'spree/shared/jquery_lazy' %>
+<% end %>
+<% cache [I18n.locale, current_pricing_options, @product, @product.images, is_forbidden_country?] do %>
+    <div data-hook="product_show" itemscope itemtype="http://schema.org/Product" class="product">
+      <div class="row">
+        <% @body_id = 'product-details' %>
+
+        <div class="col-xs-12 col-sm-12 col-md-9" data-hook="product_left_part">
+          <ul id='product-images' class="col-xs-12 col-sm-12 col-md-12" >
+            <%= render :partial => 'image' %>
+          </ul>
+          <%= render :partial => 'thumbnails' %>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-3" data-hook="product_right_part">
+          <div class="product__description">
+            <h1><%= raw(@product.featured_tag) if @product.featured_tag.present? %> <%= accurate_title %></h1>
+            <% if @product.price_for(current_pricing_options) && !@product.price.nil? && is_forbidden_country? %>
+              <h3>
+                <%= display_cost_price(@product) %>
+                <span class="price selling <%= (percentage(@product,@product.id) > 0 && @product.promotionable && @product.price > 0) ? 'sales' : nil %>" itemprop="price" content="<%= @product.price_for(current_pricing_options).to_d %>"><%= display_price(@product) %></span>
+                <meta itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"/></h3>
+            <% end %>
+          </div>
+
+          <% if @product.master.price > 0 && is_forbidden_country? %>
+              <div id="cart-form" data-hook="cart_form">
+                <%= render :partial => 'cart_form' %>
+              </div>
+              <%= render partial: 'spree/products/wishlist_form' %>
+          <% end %>
+          <%= render_snippet('/modal-sizes-guide') %>
+           
+          <ul id='product-description'>
+            <li class="dropdown open">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class='icon-cloth'></i><%= Spree.t(:description) %></a>
+              <ul class="dropdown-menu secondary-list-sidebar">
+                <p><strong>Ref:<%= @product.sku %></strong></p>
+                <li><%= product_description(@product) rescue Spree.t(:product_has_no_description) %></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class='icon-hanger'></i><%= Spree.t(:composition_and_care) %></a>
+              <ul class="dropdown-menu secondary-list-sidebar">
+                <li><p><%= raw(@product.composition_and_care) rescue Spree.t(:not_found) %></p></li>
+              </ul>
+            </li>
+            <% if page_present?('/shipping_and_return_conditions') %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class='icon-clock'></i><%= Spree.t(:shipping_and_return) %></a>
+                <ul class="dropdown-menu secondary-list-sidebar">
+                  <li><%= render_snippet('/shipping_and_return_conditions') %></li>
+                </ul>
+              </li>
+            <% end %>
+            <%= render :partial => 'promotions' %>
+          </ul>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<%= render :partial => 'related_products' %>

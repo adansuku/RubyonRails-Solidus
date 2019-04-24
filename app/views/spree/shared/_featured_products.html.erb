@@ -1,0 +1,35 @@
+<% if @featured_product.present? %>
+    <div id="related_products" class="product-section product-section--related">
+      <h3 class="h2 text-center" ><%= t(:our_favorite_products) %></h3>
+      <div class="slick-slider-v2 js-products-related-list" data-hook>
+        <% @featured_product.each do |product| %>
+          <% cache([I18n.locale, current_pricing_options, product, @taxonomies]) do %>
+            <% url = product_url(product, :taxon_id =>  product.taxon_ids.present? ? find_available_taxon(product) : nil) %>
+            <% if product.images.present? %>
+              <div id="product_<%= product.id %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+                <%= link_to url, :itemprop => 'url', :class => 'item' do %>
+                  <figure>
+                    <%= image_tag(product.images.first.attachment.url(:large), :itemprop => "image", class: "lazy") %>
+                    <figcaption>
+                      <div class="product-list__details">
+                        <h3 class="product-list__title">
+                          <%= raw(product.featured_tag) if product.featured_tag.present? %>
+                          <%= link_to truncate(product.name, :length => 28), url, :itemprop => "name", :title => product.name %>
+                        </h3>
+                        <% if product.master.price > 0 && is_forbidden_country? %>
+                          <p class="product-list__pricing">
+                            <%= display_cost_price(product) %>
+                            <span class="price selling <%= (percentage(product,product.id) > 0 && product.promotionable && product.price > 0) ? 'sales' : nil %>" itemprop="price" content="<%= product.price_for(current_pricing_options).to_d %>"><%= display_price(product) %></span>
+                          </p>
+                        <% end %>
+                      </div>
+                    </figcaption>
+                  </figure>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+<% end %>

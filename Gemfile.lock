@@ -1,0 +1,836 @@
+GIT
+  remote: https://github.com/2beDigital/solidus-blogging
+  revision: 0ae62f202a63faae5f6b651b1e4eed5cb2f8fb3f
+  branch: master
+  specs:
+    solidus_blogging (1.1.2)
+      acts-as-taggable-on
+      deface (~> 1)
+      solidus (> 1.0)
+      solidus_auth_devise
+
+GIT
+  remote: https://github.com/2beDigital/solidus_bootstraps_frontend.git
+  revision: dacfb41c77ec4676821f79c1b70d05171861d15d
+  branch: master
+  specs:
+    solidus_auth_devise_bootstrap (0.1.0)
+      solidus_auth_devise
+      solidus_bootstrap
+    solidus_bootstrap (0.2.3)
+      bootstrap-kaminari-views (~> 0.0.5)
+      bootstrap-sass (>= 3.3.5.1)
+      sass-rails (>= 5.0)
+      solidus_core (~> 2.1)
+      solidus_frontend (~> 2.1)
+    solidus_bootstrap_frontend (0.1.2)
+      bootstrap-sass (~> 3.3, >= 3.3.7)
+      sass-rails (>= 5.0)
+      solidus_auth_devise_bootstrap
+      solidus_bootstrap
+
+GIT
+  remote: https://github.com/2beDigital/solidus_contact_us
+  revision: ca35333e94a6dfcc287e2799d6b90d55571b842e
+  branch: master
+  specs:
+    solidus_contact_us (1.1.0)
+      solidus_core (>= 1.4)
+      solidus_static_content
+
+GIT
+  remote: https://github.com/2beDigital/solidus_filter_grid
+  revision: f1c87705c18ded4d7c46b30676245e96602963e7
+  branch: master
+  specs:
+    solidus_filter_grid (0.0.4)
+      font-awesome-rails
+
+GIT
+  remote: https://github.com/2beDigital/solidus_globalize
+  revision: 940f227249dd90c1421401f3aa6b65c157ca6804
+  branch: master
+  specs:
+    solidus_globalize (3.1.1.beta)
+      friendly_id-globalize
+      globalize (~> 5.0)
+      solidus_i18n (~> 1.0)
+      solidus_support
+
+GIT
+  remote: https://github.com/2beDigital/solidus_import_products
+  revision: 743d3d99204da4c871666d2969b8e0299206c542
+  branch: solidus-stable-2-1
+  specs:
+    solidus_import_products (1.1.3)
+      solidus_auth_devise
+      solidus_core (>= 2.0)
+      solidus_support
+
+GIT
+  remote: https://github.com/2beDigital/solidus_minicart
+  revision: c33abbf7cc25293123dd46082ce368fd4f7deda0
+  branch: master
+  specs:
+    solidus_minicart (0.1.4)
+      rails (~> 5.0)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_paypal_express
+  revision: 3fdb6068b5b9f49e29a7937affa66f1658dda184
+  branch: master
+  specs:
+    solidus_paypal_express (1.0.3)
+      paypal-sdk-merchant (= 1.117.2)
+      solidus_core (>= 1.4)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_redsys
+  revision: e86306d4b7a0233be2b7cd2d8a41e04b7dce8ae0
+  branch: master
+  specs:
+    solidus_redsys (1.0.1)
+      solidus_core (>= 1.4)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_return_authorizations_frontend
+  revision: 7e0d799febfea7a16bef4d2988dbfbca1c63a01d
+  branch: master
+  specs:
+    solidus_return_authorizations_frontend (1.1.2)
+      solidus_core (~> 2.1)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_sales
+  revision: 50c595ac56dc53732d55fd9af8f77331c96ec670
+  branch: master
+  specs:
+    solidus_sales (0.0.7)
+      solidus_core (~> 2.1)
+      solidus_frontend (~> 2.1)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_segment
+  revision: d90447c3cc077333024c2c7d81741af25ca3e360
+  branch: master
+  specs:
+    solidus_segment (1.0.4)
+      solidus_core (~> 2.1, >= 2.1)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_static_content
+  revision: b79c4117224d7f15e13f9d4764a859a6fdc679d3
+  specs:
+    solidus_static_content (1.1.3)
+      deface (~> 1.0.2)
+      solidus (>= 1.1, < 3)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_store_locator
+  revision: 88a68a85fc4d2880811637015f8946c39513271b
+  branch: master
+  specs:
+    solidus_store_locator (1.2.2)
+      geocoder (= 1.2.6)
+      jbuilder (~> 2.3)
+      solidus_backend (~> 2.1.0)
+      solidus_core (~> 2.1.0)
+      solidus_frontend (~> 2.1.0)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_tobe_improvements
+  revision: 2d348bf20f0b2ebea030c93e481d7f564366ebb8
+  branch: master
+  specs:
+    solidus_tobe_improvements (0.2.9)
+      httparty (>= 0.13.7)
+      solidus_core (>= 2.0)
+      solidus_trackers
+
+GIT
+  remote: https://github.com/2beDigital/solidus_variant_all_options
+  revision: b4cb8003f03fbd515d2d2e8ce0fdc0f009da8bda
+  branch: master
+  specs:
+    solidus_variant_all_options (0.0.1)
+      solidus_api (~> 2.1)
+      solidus_backend (~> 2.1)
+      solidus_core (~> 2.1)
+      solidus_frontend (~> 2.1)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_variant_options
+  revision: 81c6d4a51e314d507f4dc3b775574e4793fdca53
+  branch: master
+  specs:
+    solidus_variant_options (0.0.3)
+      solidus_api (~> 2.1)
+      solidus_backend (~> 2.1)
+      solidus_core (~> 2.1)
+      solidus_frontend (~> 2.1)
+
+GIT
+  remote: https://github.com/2beDigital/solidus_wishlist
+  revision: 7adf3b4f2af3490d73937d56e1facb9d946e7398
+  branch: master
+  specs:
+    solidus_wishlist (2.2.1)
+      solidus_core (>= 1.2.0, < 3)
+      solidus_support
+
+GIT
+  remote: https://github.com/2bedigital/solidus_asset_variant_options
+  revision: 4089ec7da556e65f8e4abf1ad4671593343f8bbb
+  branch: master
+  specs:
+    solidus_asset_variant_options (1.0.4)
+      solidus (>= 1.1, < 3)
+
+GIT
+  remote: https://github.com/globalize/globalize
+  revision: ff22b92bfa283bb9f378899031dbfad38de6280d
+  branch: master
+  specs:
+    globalize (5.1.0)
+      activemodel (>= 4.2, < 5.3)
+      activerecord (>= 4.2, < 5.3)
+      request_store (~> 1.0)
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_editor
+  revision: 8dc65bda25c14915cf7a88bca14c64068a8e7d22
+  branch: master
+  specs:
+    solidus_editor (1.0.0)
+      ckeditor (~> 4.1)
+      deface (~> 1.0.2)
+      solidus_backend (>= 1.0, < 3)
+      tinymce-rails (~> 4.2.5)
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_i18n
+  revision: 946d7256ffae331e6390df36f31ebda1965cdb7f
+  ref: 946d7256ffae331e6390df36f31ebda1965cdb7f
+  specs:
+    solidus_i18n (1.1.0)
+      deface (~> 1.0)
+      i18n_data (~> 0.7.0)
+      kaminari-i18n (~> 0.3.2)
+      rails-i18n (>= 4.0.1, < 6)
+      routing-filter (~> 0.6.0)
+      solidus_core (>= 1.1, < 3)
+      solidus_support
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_print_invoice
+  revision: 8de9ad6507e3a7edb8fcfeb6789ab65e4889418d
+  branch: master
+  specs:
+    solidus_print_invoice (1.0.2)
+      deface
+      prawn (= 1.0.0)
+      solidus (>= 1.0, < 3)
+      solidus_support
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_related_products
+  revision: ed6ca3b0d75628bf580feb735d1a4a0937f77c70
+  branch: master
+  specs:
+    solidus_related_products (1.1.0)
+      deface (~> 1.0)
+      solidus_backend (>= 1.0, < 3)
+      solidus_support
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_sitemap
+  revision: 8aa2e6011dfbb986890bac181e50f460bd14878c
+  branch: master
+  specs:
+    solidus_sitemap (1.0.0)
+      sitemap_generator (~> 6.0.1)
+      solidus_core (>= 1.1, < 3)
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_trackers
+  revision: 0e01869560e63245acb86313a66eddb85337b3d6
+  branch: master
+  specs:
+    solidus_trackers (1.1.0)
+      solidus_core (>= 2.1.0.alpha, < 3)
+      solidus_support
+
+GIT
+  remote: https://github.com/solidusio/solidus
+  revision: 0c4856ad849550a4862e9cd7380088d0366ad096
+  branch: v2.1.1
+  specs:
+    solidus (2.1.1)
+      solidus_api (= 2.1.1)
+      solidus_backend (= 2.1.1)
+      solidus_core (= 2.1.1)
+      solidus_frontend (= 2.1.1)
+      solidus_sample (= 2.1.1)
+    solidus_api (2.1.1)
+      rabl (= 0.13.0)
+      solidus_core (= 2.1.1)
+      versioncake (~> 3.0)
+    solidus_backend (2.1.1)
+      bourbon (>= 4, < 6)
+      coffee-rails
+      font-awesome-rails (~> 4.0)
+      handlebars_assets (~> 0.23)
+      jquery-rails
+      jquery-ui-rails (~> 5.0.0)
+      sass-rails
+      select2-rails (= 3.5.9.1)
+      solidus_api (= 2.1.1)
+      solidus_core (= 2.1.1)
+    solidus_core (2.1.1)
+      activemerchant (~> 1.48)
+      acts_as_list (~> 0.3)
+      awesome_nested_set (~> 3.0, >= 3.0.1)
+      cancancan (~> 1.10)
+      carmen (~> 1.0.0)
+      ffaker (~> 2.0)
+      friendly_id (~> 5.0)
+      highline (~> 1.7)
+      kaminari (~> 0.15, >= 0.15.1)
+      monetize (~> 1.1)
+      paperclip (~> 4.2)
+      paranoia (~> 2.2.0.pre)
+      premailer-rails
+      rails (~> 5.0.0)
+      ransack (~> 1.8)
+      responders
+      state_machines-activerecord (~> 0.4)
+      stringex (~> 1.5.1)
+      truncate_html (~> 0.9, >= 0.9.2)
+      twitter_cldr (~> 3.0)
+    solidus_frontend (2.1.1)
+      canonical-rails (~> 0.1.1)
+      coffee-rails
+      font-awesome-rails (~> 4.0)
+      jquery-rails
+      sass-rails
+      solidus_api (= 2.1.1)
+      solidus_core (= 2.1.1)
+    solidus_sample (2.1.1)
+      solidus_core (= 2.1.1)
+
+GIT
+  remote: https://github.com/solidusio/solidus_auth_devise
+  revision: 91687769600cc9292e198684be8d15b6796f07e2
+  branch: master
+  specs:
+    solidus_auth_devise (2.1.0)
+      devise (~> 4.1)
+      devise-encryptable (= 0.2.0)
+      solidus_core (>= 1.2.0, < 3)
+      solidus_support (>= 0.1.3)
+
+GIT
+  remote: https://support2bedigital:BORRASPICAZO01@bitbucket.org/2bedigital/solidus_theme_moncho
+  revision: 45e060a02c2a560c0157ce2f6ceaebb736cb76e1
+  branch: master
+  specs:
+    solidus_theme_moncho (0.1.4)
+      solidus_core (~> 2.1)
+      solidus_frontend (~> 2.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actioncable (5.0.7.1)
+      actionpack (= 5.0.7.1)
+      nio4r (>= 1.2, < 3.0)
+      websocket-driver (~> 0.6.1)
+    actionmailer (5.0.7.1)
+      actionpack (= 5.0.7.1)
+      actionview (= 5.0.7.1)
+      activejob (= 5.0.7.1)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 2.0)
+    actionpack (5.0.7.1)
+      actionview (= 5.0.7.1)
+      activesupport (= 5.0.7.1)
+      rack (~> 2.0)
+      rack-test (~> 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionpack-cloudflare (1.1.0)
+      actionpack (>= 3.2)
+    actionview (5.0.7.1)
+      activesupport (= 5.0.7.1)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activejob (5.0.7.1)
+      activesupport (= 5.0.7.1)
+      globalid (>= 0.3.6)
+    activemerchant (1.91.0)
+      activesupport (>= 4.2)
+      builder (>= 2.1.2, < 4.0.0)
+      i18n (>= 0.6.9)
+      nokogiri (~> 1.4)
+    activemodel (5.0.7.1)
+      activesupport (= 5.0.7.1)
+    activerecord (5.0.7.1)
+      activemodel (= 5.0.7.1)
+      activesupport (= 5.0.7.1)
+      arel (~> 7.0)
+    activesupport (5.0.7.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    acts-as-taggable-on (6.0.0)
+      activerecord (~> 5.0)
+    acts_as_list (0.9.17)
+      activerecord (>= 3.0)
+    addressable (2.6.0)
+      public_suffix (>= 2.0.2, < 4.0)
+    airbrussh (1.3.0)
+      sshkit (>= 1.6.1, != 1.7.0)
+    analytics-ruby (2.2.5)
+      commander (~> 4.4)
+    arel (7.1.4)
+    ast (2.4.0)
+    autoprefixer-rails (9.4.7)
+      execjs
+    awesome_nested_set (3.1.4)
+      activerecord (>= 4.0.0, < 5.3)
+    aws-sdk (1.67.0)
+      aws-sdk-v1 (= 1.67.0)
+    aws-sdk-v1 (1.67.0)
+      json (~> 1.4)
+      nokogiri (~> 1)
+    bcrypt (3.1.12)
+    bindex (0.5.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
+    bourbon (4.3.4)
+      sass (~> 3.4)
+      thor (~> 0.19)
+    builder (3.2.3)
+    byebug (9.1.0)
+    camertron-eprun (1.1.1)
+    cancancan (1.17.0)
+    canonical-rails (0.1.2)
+      rails (>= 4.1, < 5.1)
+    capistrano (3.6.1)
+      airbrussh (>= 1.0.0)
+      capistrano-harrow
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.1.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-faster-assets (1.1.0)
+      capistrano (>= 3.1)
+    capistrano-harrow (0.5.3)
+    capistrano-rails (1.1.8)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    carmen (1.0.2)
+      activesupport (>= 3.0.0)
+    chronic (0.10.2)
+    chunky_png (1.3.10)
+    ckeditor (4.2.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    cldr-plurals-runtime-rb (1.0.1)
+    climate_control (0.2.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
+    coffee-rails (4.1.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.1.x)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
+    colorize (0.8.1)
+    commander (4.4.6)
+      highline (~> 1.7.2)
+    compass (1.0.3)
+      chunky_png (~> 1.2)
+      compass-core (~> 1.0.2)
+      compass-import-once (~> 1.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      sass (>= 3.3.13, < 3.5)
+    compass-core (1.0.3)
+      multi_json (~> 1.0)
+      sass (>= 3.3.0, < 3.5)
+    compass-import-once (1.0.5)
+      sass (>= 3.2, < 3.5)
+    compass-rails (3.1.0)
+      compass (~> 1.0.0)
+      sass-rails (< 5.1)
+      sprockets (< 4.0)
+    concurrent-ruby (1.1.4)
+    crass (1.0.4)
+    css_parser (1.7.0)
+      addressable
+    deface (1.0.2)
+      colorize (>= 0.5.8)
+      nokogiri (~> 1.6.0)
+      polyglot
+      rails (>= 3.1)
+    devise (4.6.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
+    devise-encryptable (0.2.0)
+      devise (>= 2.1.0)
+    devise-i18n (1.6.4)
+      devise (>= 4.4)
+    erubis (2.7.0)
+    execjs (2.7.0)
+    ffaker (2.10.0)
+    ffi (1.9.25)
+    figaro (1.1.1)
+      thor (~> 0.14)
+    font-awesome-rails (4.6.3.1)
+      railties (>= 3.2, < 5.1)
+    friendly_id (5.2.5)
+      activerecord (>= 4.0.0)
+    friendly_id-globalize (1.0.0.alpha3)
+      friendly_id (>= 5.2.0, < 6.0)
+    geocoder (1.2.6)
+    globalid (0.4.2)
+      activesupport (>= 4.2.0)
+    handlebars_assets (0.23.2)
+      execjs (~> 2.0)
+      sprockets (>= 2.0.0)
+      tilt (>= 1.2)
+    highline (1.7.10)
+    htmlentities (4.3.4)
+    httparty (0.16.4)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
+    i18n (1.5.3)
+      concurrent-ruby (~> 1.0)
+    i18n_data (0.7.0)
+    jbuilder (2.8.0)
+      activesupport (>= 4.2.0)
+      multi_json (>= 1.2)
+    jquery-rails (4.2.2)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
+    json (1.8.6)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kaminari-i18n (0.3.2)
+      kaminari
+      rails
+    lograge (0.10.0)
+      actionpack (>= 4)
+      activesupport (>= 4)
+      railties (>= 4)
+      request_store (~> 1.0)
+    loofah (2.2.3)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
+    method_source (0.9.2)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2018.0812)
+    mimemagic (0.3.0)
+    mini_mime (1.0.1)
+    mini_portile2 (2.1.0)
+    minitest (5.11.3)
+    monetize (1.9.1)
+      money (~> 6.12)
+    money (6.13.2)
+      i18n (>= 0.6.4, <= 2)
+    multi_json (1.13.1)
+    multi_xml (0.6.0)
+    mysql2 (0.5.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (5.0.2)
+    newrelic_rpm (5.4.0.347)
+    nio4r (2.3.1)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
+    orm_adapter (0.5.0)
+    paperclip (4.3.7)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+    paranoia (2.2.1)
+      activerecord (>= 4.0, < 5.1)
+    parser (2.5.1.2)
+      ast (~> 2.4.0)
+    paypal-sdk-core (0.3.4)
+      multi_json (~> 1.0)
+      xml-simple
+    paypal-sdk-merchant (1.117.2)
+      paypal-sdk-core (~> 0.3.0)
+    pdf-core (0.2.5)
+    polyglot (0.3.5)
+    powerpack (0.1.2)
+    prawn (1.0.0)
+      pdf-core (~> 0.2.2)
+      ttfunk (~> 1.1.1)
+    premailer (1.11.1)
+      addressable
+      css_parser (>= 1.6.0)
+      htmlentities (>= 4.0.0)
+    premailer-rails (1.10.2)
+      actionmailer (>= 3, < 6)
+      premailer (~> 1.7, >= 1.7.9)
+    public_suffix (3.0.3)
+    puma (3.12.0)
+    rabl (0.13.0)
+      activesupport (>= 2.3.14)
+    rack (2.0.6)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rails (5.0.7.1)
+      actioncable (= 5.0.7.1)
+      actionmailer (= 5.0.7.1)
+      actionpack (= 5.0.7.1)
+      actionview (= 5.0.7.1)
+      activejob (= 5.0.7.1)
+      activemodel (= 5.0.7.1)
+      activerecord (= 5.0.7.1)
+      activesupport (= 5.0.7.1)
+      bundler (>= 1.3.0)
+      railties (= 5.0.7.1)
+      sprockets-rails (>= 2.0.0)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.0.4)
+      loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.1)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
+    railties (5.0.7.1)
+      actionpack (= 5.0.7.1)
+      activesupport (= 5.0.7.1)
+      method_source
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+    rainbow (2.2.2)
+      rake
+    rake (12.3.2)
+    ransack (1.8.10)
+      actionpack (>= 3.0, < 5.2)
+      activerecord (>= 3.0, < 5.2)
+      activesupport (>= 3.0, < 5.2)
+      i18n
+    rb-fsevent (0.10.3)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
+    rdoc (4.3.0)
+    recaptcha (4.12.0)
+      json
+    redis (4.0.2)
+    redis-actionpack (5.0.2)
+      actionpack (>= 4.0, < 6)
+      redis-rack (>= 1, < 3)
+      redis-store (>= 1.1.0, < 2)
+    redis-activesupport (5.0.7)
+      activesupport (>= 3, < 6)
+      redis-store (>= 1.3, < 2)
+    redis-rack (2.0.4)
+      rack (>= 1.5, < 3)
+      redis-store (>= 1.2, < 2)
+    redis-rails (5.0.2)
+      redis-actionpack (>= 5.0, < 6)
+      redis-activesupport (>= 5.0, < 6)
+      redis-store (>= 1.2, < 2)
+    redis-store (1.5.0)
+      redis (>= 2.2, < 5)
+    request_store (1.4.1)
+      rack (>= 1.4)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
+    routing-filter (0.6.2)
+      actionpack (>= 4.2, < 6)
+      activesupport (>= 4.2, < 6)
+    rubocop (0.48.1)
+      parser (>= 2.3.3.1, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.10.0)
+    rvm1-capistrano3 (1.4.0)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
+    sass (3.4.25)
+    sass-rails (5.0.7)
+      railties (>= 4.0.0, < 6)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
+    sassc (2.0.0)
+      ffi (~> 1.9.6)
+      rake
+    sdoc (0.4.2)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
+    select2-rails (3.5.9.1)
+      thor (~> 0.14)
+    sitemap_generator (6.0.1)
+      builder (~> 3.0)
+    solidus_support (0.2.2)
+    spring (2.0.2)
+      activesupport (>= 4.2)
+    sprockets (3.7.2)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (3.2.1)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
+    sshkit (1.17.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
+    state_machines (0.5.0)
+    state_machines-activemodel (0.5.1)
+      activemodel (>= 4.1, < 6.0)
+      state_machines (>= 0.5.0)
+    state_machines-activerecord (0.5.2)
+      activerecord (>= 4.1, < 6.0)
+      state_machines-activemodel (>= 0.5.0)
+    stringex (1.5.1)
+    sucker_punch (2.1.1)
+      concurrent-ruby (~> 1.0)
+    thor (0.20.3)
+    thread_safe (0.3.6)
+    tilt (2.0.9)
+    tinymce-rails (4.2.8)
+      railties (>= 3.1.1)
+    truncate_html (0.9.3)
+    ttfunk (1.1.1)
+    turbolinks (5.0.1)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.2.0)
+    twitter_cldr (3.6.0)
+      camertron-eprun
+      cldr-plurals-runtime-rb (~> 1.0)
+      tzinfo
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+    uglifier (4.1.19)
+      execjs (>= 0.3.0, < 3)
+    unicode-display_width (1.4.0)
+    versioncake (3.4.0)
+      actionpack (>= 3.2)
+      activesupport (>= 3.2)
+      railties (>= 3.2)
+      tzinfo
+    warden (1.2.8)
+      rack (>= 2.0.6)
+    web-console (3.7.0)
+      actionview (>= 5.0)
+      activemodel (>= 5.0)
+      bindex (>= 0.4.0)
+      railties (>= 5.0)
+    websocket-driver (0.6.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.3)
+    whenever (0.9.7)
+      chronic (>= 0.6.3)
+    xml-simple (1.1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  actionpack-cloudflare
+  analytics-ruby
+  aws-sdk (< 2.0)
+  bourbon (~> 4.3, >= 4.3.4)
+  byebug (~> 9.0, >= 9.0.6)
+  capistrano (~> 3.6.1)
+  capistrano-bundler (~> 1.1.4)
+  capistrano-faster-assets (~> 1.0, >= 1.0.2)
+  capistrano-rails (~> 1.1.8)
+  coffee-rails (~> 4.1.0)
+  compass (~> 1.0, >= 1.0.3)
+  compass-rails (~> 3.0, >= 3.0.1)
+  devise-i18n (~> 1.6, >= 1.6.2)
+  figaro (~> 1.1, >= 1.1.1)
+  font-awesome-rails (= 4.6.3.1)
+  globalize!
+  jbuilder (~> 2.0)
+  jquery-rails (~> 4.2.1)
+  lograge (~> 0.10.0)
+  mysql2 (~> 0.4)
+  newrelic_rpm (~> 5.2, >= 5.2.0.345)
+  puma (~> 3.12)
+  rails (~> 5.0.7)
+  rake
+  recaptcha
+  redis-rails (~> 5.0)
+  rubocop (~> 0.48.1)
+  rvm1-capistrano3
+  sass-rails (~> 5.0)
+  sdoc (~> 0.4.0)
+  solidus!
+  solidus_asset_variant_options!
+  solidus_auth_devise!
+  solidus_blogging!
+  solidus_bootstrap_frontend!
+  solidus_contact_us!
+  solidus_editor!
+  solidus_filter_grid!
+  solidus_globalize!
+  solidus_i18n!
+  solidus_import_products!
+  solidus_minicart!
+  solidus_paypal_express!
+  solidus_print_invoice!
+  solidus_redsys!
+  solidus_related_products!
+  solidus_return_authorizations_frontend!
+  solidus_sales!
+  solidus_segment!
+  solidus_sitemap!
+  solidus_static_content!
+  solidus_store_locator!
+  solidus_theme_moncho!
+  solidus_tobe_improvements!
+  solidus_trackers!
+  solidus_variant_all_options!
+  solidus_variant_options!
+  solidus_wishlist!
+  spring (~> 2.0, >= 2.0.1)
+  sprockets (~> 3.7)
+  sprockets-rails (~> 3.2)
+  sucker_punch (~> 2.0)
+  turbolinks (~> 5.0.1)
+  uglifier (>= 1.3.0)
+  web-console (>= 3.5)
+  whenever (~> 0.9.7)
+
+RUBY VERSION
+   ruby 2.3.7p456
+
+BUNDLED WITH
+   1.17.2

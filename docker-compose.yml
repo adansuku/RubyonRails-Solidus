@@ -1,0 +1,33 @@
+version: '2'
+services:
+   mysql:
+     image: mysql:5.6.41
+     volumes:
+       # User-relative path +info https://docs.docker.com/compose/compose-file/#/volumes-volumedriver
+       - ${BDPath}:/var/lib/mysql
+     ports:
+       - '3307:3306'
+     environment:
+       MYSQL_USER: root
+       MYSQL_ROOT_PASSWORD: toor
+   redis:
+     image: redis:4.0.10
+     ports:
+       - '6379:6379'
+     volumes:
+       - spree-redis:/var/lib/redis/data
+   spree:
+     build: .
+     depends_on:
+       - mysql
+       - redis
+     ports:
+       - '3000:3000'
+     volumes:
+       - .:/data/spree
+     environment:
+       - RAILS_ENV=development
+     command: ./script/wait-for-it.sh mysql:3306 --timeout=200 --strict -- ./script/start
+volumes:
+     spree-redis: {}
+     spree: {}

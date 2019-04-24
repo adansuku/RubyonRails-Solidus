@@ -1,0 +1,30 @@
+<% content_for :head do %>
+  <% if !@blog_entry.author.blank? and !@blog_entry.author.google_plus_url.blank? %>
+    <link rel="author" href="<%= @blog_entry.author.google_plus_url %>"/>
+  <% end %>
+  <% if @blog_entry.meta_title.present? -%>
+    <meta name="title" content="<%= @blog_entry.meta_title %>">
+  <% else %>
+    <meta name="title" content="<%= @blog_entry.title %>">
+  <% end %>
+  
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'spree/blog_entries/blog_sidebar' %>
+<% end %>
+
+<div id="blog_entry_container" class="col-xs-12 col-sm-12 col-md-10 col-lg-11 col-md-offset-2 col-lg-offset-1">
+  <div id="blog_entry_entry">
+
+    <h1><%= @blog_entry.title %></h1>
+
+    <div class="blog_entry_body">
+      <%= raw(@blog_entry.body) %>
+    </div>
+
+    <%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => @blog_entry} %>
+  </div>
+
+  <%= render :partial => 'spree/blog_entries/comments', :locals => {:blog_entry => @blog_entry}  %>
+</div>

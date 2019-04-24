@@ -1,0 +1,39 @@
+<table id="order_detail">
+  <tr>
+    <td>
+      <p align="left">
+        <%= Spree.t(:dear_customer) %>&nbsp;<span class="name"><%= @order.ship_address.firstname %></span>
+      </p>
+      <p align="left">
+        <%= Spree.t('shipment_mailer.shipped_email.instructions') %>
+      </p>
+      <p align="left">
+        <%= Spree.t('shipment_mailer.shipped_email.shipment_summary') %>
+      </p>
+      <table id="show_order">
+        <% @manifest.each do |item| %>
+          <tr>
+            <td class="variant_sku">
+              <% if item.variant.images.length == 0 %>
+                  <%= link_to image_tag(item.variant.product.display_image.attachment(:small)), item.variant.product %>
+              <% else %>
+                  <%= link_to image_tag(item.variant.images.first.attachment.url(:small)), item.variant.product %>
+              <% end %>
+            </td>
+            <td><%= item.variant.product.name %></td>
+            <td><%= item.variant.options_text %></td>
+          </tr>
+        <% end %>
+      </table>
+      <p>
+        <%= Spree.t('shipment_mailer.shipped_email.track_information', :tracking => @carton.tracking)     if @carton.tracking %>
+      </p>
+      <p>
+        <%= Spree.t('shipment_mailer.shipped_email.track_link',        :url      => @carton.tracking_url) if @carton.tracking_url %>
+      </p>
+      <p>
+        <%= Spree.t('shipment_mailer.shipped_email.thanks') %>
+      </p>
+    </td>
+  </tr>
+</table>

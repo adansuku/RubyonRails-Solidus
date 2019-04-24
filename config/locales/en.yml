@@ -1,0 +1,160 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+en:
+  number:
+    percentage:
+      format:
+        precision: 0
+  ##video##
+  navigation: Your browser does not support the video tag
+  ## scopes order ##
+  order_scope_word: Order
+  order_scope_relevance: Relevance
+  order_scope_descend_by_master_price: Price - High to Low
+  order_scope_ascend_by_master_price: Price - Low to High
+  order_scope_ascend_by_name: Name (A - Z)
+  order_scope_descend_by_name: Name (Z - A)
+  order_scope_descend_by_updated_at: Newest
+  ## End scopes order ##
+  site_by: "Site by <strong>2beDigital</strong>"
+  Note: 'NOTE: Your account must be validated by an administrator so you can access the full site'
+  cookies_services_info: "Cookies help us deliver our services. By using our services, you agree to our use of cookies."
+  learn_more: "More information"
+  selected_quantity_not_available: "Selected quantity not available"
+  click_the_order_number: "Click here."
+  ## Sign Up ##
+  activerecord:
+    attributes:
+      spree/order:
+        approved_at: Finished
+        approver: Finished by
+  spree:
+    reimbursement_mailer:
+      reimbursement_email:
+        subject: "Florentino reimbursement notification"
+    email_or_name_or_lastname: Email, or Name or Lastname
+    finished: Finished
+    in_progress: In progress
+    approve: Finalize
+    approver: Finished by
+    approved_at: Finished in
+    cart_subtotal: Subtotal
+    street_address: Address
+    street_address_2: Address (cont.)
+    ## Info Company Módulo facturas ##
+    company_name: BXXX, XXX, S.L.
+    company_direction: Calle XXXX nº1
+    company_codezip: "C.P.: XXXX"
+    company_state: Barcelona
+    company_phone: "Tel: 93X XXX XXX"
+    company_ident_fiscal: "CIF: B-XXX XXX XXX"
+    ident_fiscal: Identificación fiscal
+    stores: Stores
+    size_guide: Discover your size
+    dear_customer: 'Hi!'
+    thanks: 'Thanks for your business in Florentino!'
+    service_conditions: "Consult the Terms of Service by clicking <a href='https://www.florentino.com/en/terms-of-use' style='color:#c89a4a;'>here</a>."
+    service_info: 'For any questions or concerns, contact Att. the customer on +34 986 787 050 or' 
+    service_note: "Note: This e-mail has been sent from a notification address that does not accept incoming e-mail messages. Please, do not respond to this message."
+    greeting: 'Sincerely,'
+    team: 'Team Florentino'
+    date: 'Date'
+    order_id: 'Id. order'
+    order: 'Order'
+    ship_address: 'Ship address'
+    payment_method: 'Payment method'
+    at_customer: 'Customer service'
+    deliver_date: 'Delivery terms'
+    safe_payment: 'Safe payment'
+    return_and_exchange: 'Return and exchange'
+    picked: Picked up at the store
+    arrangments: Free arrangements in store
+    deliver_date_info: '3 to 5 days'
+    safe_payment_info: 'Visa, Mastercard, ...'
+    return_and_exchange_info: '15 days'
+    picked_info: 'Place your order online and pick it up at your nearest store'
+    arrangments_info: 'Everything will be perfect for you, because the arrangements are free!'
+    all_rights_reserved: All rights reserved.
+    mundo_florentino: Florentino World
+    editorial: Editorial
+    shipping_and_return_conditions: "The delivery time for national shipments is 3 to 5 business days except for the Balearic Islands which will be 5 to 7 working days, for international shipments the delivery time is 5 to 7 working days. To effect changes and returns has 15 calendar days."
+    composition_and_care : Composition and care
+    shipping_and_return: Shipping and return
+    help: Help
+    international_shops: Internationals Shops
+    national_shops: National Shops
+    enter_address: Find nearest store
+    address_or_zipcode: Address or zipcode
+    dni: DNI/NIF
+    birth_day: Birth day
+    request_invoice: Request invoice
+    sent_as_a_gift: Sent as a gift?
+    order_notice: Information about the order.
+    sent_as_a_gift_info: This order must be sent as a gift.
+    request_invoice_info: The customer requests an invoice for the order.
+    Picked_up_at_store: Picked up at store?
+    picked_store: Picked store
+    select_picked_store: Select pickup store
+    picked_store_selected: Picked store selected
+    secure_payments: Secure payments
+    online_invoice_payment_description: "This service provides a secure payment to our customers."
+    name_or_sku: SKU (insert firsts 4 characters of sku product)
+    login_as_existing: "Log in"
+    create_a_new_account: "Create your account"
+    new_customer: "Create your account"
+    addressErrorAlert: Unable to find address
+    autoGeocodeErrorAlert: Automatic location detection failed. Please fill in your address or zip code.
+    distanceErrorAlert: Unfortunately, our closest location is more than
+    noResultsTitle: No results
+    noResultsDesc: No locations were found with the given criteria. Please modify your selections or input.
+    kilometersLang: kilometers
+    kilometerLang: kilometer
+    click_here: Click here.
+    send_gift_text: Add message
+    without_message: Without message
+    message: Message
+    edit_my_account: Edit my account
+    show_more: View all
+    bespoke_tailoring: Bespoke tailoring request
+    return_authorization_authorized_mail: We have correctly received your return request.
+    return_authorization_text_mail: "In the next few days a transport agency will go through the address indicated to pick up your package.<br/><br/>Prepare your return: enter in the box the items you want to return. Cross out or remove any label from the original box to avoid an error in the shipment. Delivery the carrier the package closed and packed correctly.<br/><br/>Reimbursement: once the package has been received at our facilities and the perfect condition of the items has been checked, the amount will be refunded, excluding the return costs, which will be the following:<br/>Spain Peninsula: € 5.99<br/>Spain Balearic Islands: € 12.99<br/>Europe: € 19.99"
+    reimbursement_text_mail: 'Your refund has been accepted.<br/><br/>You will receive the amount in the original payment method within a maximum period of 3 working days, depending on your bank.'
+    order_mailer:
+      confirm_payment:
+        subject: Payment confirm.
+    payment_success: Payment success.
+    user_mailer:
+      welcome:
+        thanks: Thanks for signing up at
+        subject: Welcome!
+        enjoy: We want you to enjoy your purchases.
+    featured_tag: Featured tag
+  devise:
+    user_registrations:
+      spree_user:
+        mail_in_use: There is already a registered user with that email or the passwords do not match
+  order_summary_and_email_txt: " to see the summary of the order. You will receive a copy also via email."
+  click_the_order_number: "Click here"
+  signup_title: Log in
+  add_to_cart: Add to cart
+  you_may_also_like: You may also like
+  complete_your_look: Complete your look
+  our_favorite_products: Our favorites

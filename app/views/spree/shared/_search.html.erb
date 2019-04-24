@@ -1,0 +1,7 @@
+<%= form_tag spree.products_path, :method => :get, class: "navbar-form", id: 'navbar-form' do %>
+<a href="#" class="btn btn-primary" id="navbar-form__toggle"><i class="icon-search"><span class='hidden'>&nbsp;</span></i></a>
+    <div class="form-group">
+        <%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control input-height-small" %>
+    </div>
+    <%= button_tag :class => 'btn', :id => 'search-button', :type => :submit do %><i class="icon-search"><span class='hidden'>&nbsp;</span></i><% end %>
+<% end %>

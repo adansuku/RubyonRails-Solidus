@@ -1,0 +1,25 @@
+<% content_for :sidebar do %>
+  <div id='page_sidebar_navigation' class='col-md-2 col-lg-2 hidden-xs hidden-sm' data-hook='page_sidebar_navigation'>
+    <ul id='sidebar-menu'>
+      <%= render partial: 'spree/shared/sidebar_taxonomies' %>
+    </ul>
+  </div>
+<% end %>
+<% content_for :scripts do %>
+  <%= render :partial => 'spree/shared/jquery_lazy' %>
+<% end %>
+<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-2 col-lg-offset-2">
+    <% if params[:keywords] %>
+      <div id="search_results" data-hook="search_results" class='taxon_products'>
+        <% if @products.empty? %>
+          <h5 class="search-results-title"><%= Spree.t(:no_products_found) %></h5>
+        <% else %>
+          <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+        <% end %>
+      </div>
+    <% else %>
+        <% cache(cache_key_for_products) do %>
+          <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+        <% end %>
+    <% end %>
+</div>

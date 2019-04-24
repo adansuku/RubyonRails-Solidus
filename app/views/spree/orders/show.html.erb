@@ -1,0 +1,33 @@
+<% if order_just_completed?(@order)  %>
+    <div class="purchasing">
+      <div class="thanks">
+        <div class="box">
+          <i class="i-thanks" alt="<%= Spree.t('order_mailer.confirm_email.thanks')  %>"></i>
+          <h1><%= t(:new_order_completed) %></h1>
+          <p><%= t(:thanks_for_shopping_with_us) %></p>
+        </div>
+        <p>
+          <%= link_to order_url(@order) , :class => '' do %>
+              <strong><%= t(:click_the_order_number) %></strong>
+          <% end %>
+          <%= t(:order_summary_and_email_txt) %>
+        </p>
+      </div>
+    </div>
+<% else %>
+    <fieldset id="order_summary" data-hook>
+      <h1><%= Spree.t(:order_number, :number => @order.number) %></h1>
+      <div id="order" data-hook>
+        <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
+        <br class="clear" />
+        <p data-hook="links">
+          <%= link_to Spree.t(:back_to_store), spree.root_path, :class => "btn btn-success" %>
+          <% unless order_just_completed?(@order) %>
+              <% if try_spree_current_user && respond_to?(:spree_account_path) %>
+                  <%= link_to Spree.t(:my_account), spree_account_path, :class => "btn btn-success" %>
+              <% end %>
+          <% end %>
+        </p>
+      </div>
+    </fieldset>
+<% end %>

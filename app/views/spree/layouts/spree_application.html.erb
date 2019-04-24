@@ -1,0 +1,70 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render :partial => 'spree/shared/head' %>
+    <%= render :partial => 'spree/shared/google_adwords' %>
+  </head>
+  <body id="<%= @body_id || 'default' %>" class="<%= body_class %>" data-hook="body">
+  <div id="page">
+
+    <header id="header" class="<%= page_present?('/info-in-header') ? 'with_alert' : 'header' %>" data-hook>
+        <% if page_present?('/info-in-header') %>
+          <div class="info-notify hidden-xs hidden-sm"><%= render_snippet('/info-in-header') %></div>
+        <% end %>
+        <%= render :partial => 'spree/shared/header' %>
+    </header>
+
+    <div id="content">
+      <% unless cookies_accepted? %>
+          <%= render :partial => 'spree/shared/cookies_policy' %>
+      <% end %>
+
+      <%= yield :slider %>
+      <% css_class_1 = request.path.include?('/t/') || request.path == '/products' ? 'full-screen-grid-product' : ( request.path == '/blog' ? 'full-screen-grid-blog' : nil ) %> 
+      <div class='container <%= css_class_1 %>' id='container' data-hook>
+        <div class="page-header">
+          <%= flash_messages %>
+          <%= yield :taxon_text %>
+          <% css_class_2 = request.path.include?('/products/') ? 'col-xs-12 col-md-12 product-file' : 'col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-2 col-lg-offset-2' %>
+          <div class="<%= css_class_2 %>">
+            <div id='breadcrumbs_and_filters'>
+              <%= breadcrumbs(@taxon) %>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
+                <%= render :partial => 'spree/shared/filters' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
+        <%= yield %>
+        <%= yield :templates %>
+      </div>
+
+      <%= yield :templates_full_width %>
+
+    </div>
+
+    <div id="footer-pusher"></div>
+
+  </div>
+
+  <%= render :partial => 'spree/shared/footer' %>
+
+  <%= yield :foot %>
+  <ul class="nav pull-right scroll-top" id="to_top">
+    <li>
+      <a id="link_to_top" href="#" title="Scroll to top"><i class="fa fa-angle-up fa-lg" aria-hidden='true'><span class='hidden'>&nbsp;</span></i></a>
+    </li>
+  </ul>
+
+  <%= yield :scripts %>
+
+  <script>
+    Spree.api_key = <%= raw(try_spree_current_user.try(:spree_api_key).to_s.inspect) %>;
+  </script>
+  </body>
+</html>

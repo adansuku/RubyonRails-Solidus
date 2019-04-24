@@ -1,0 +1,34 @@
+<%
+   paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+   paginated_products ||= products
+%>
+
+<% content_for :head do %>
+    <% if paginated_products.respond_to?(:num_pages) %>
+        <%= rel_next_prev_link_tags paginated_products %>
+    <% end %>
+<% end %>
+
+<div data-hook="products_search_results_heading">
+  <% if products.empty? && @taxon.present? && @taxon.description.blank? %>
+      <div data-hook="products_search_results_heading_no_results_found">
+        <h5><%= Spree.t(:no_products_found) %></h5>
+      </div>
+  <% elsif params.key?(:keywords) %>
+      <div data-hook="products_search_results_heading_results_found">
+        <h5 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h5>
+      </div>
+  <% end %>
+</div>
+
+<% if products.any? %>
+    <ul id="products_<%= SecureRandom.hex %>" class="product-list row" data-hook>
+      <%= render partial: 'spree/shared/product', locals: { products: products } %> 
+    </ul>
+<% end %>
+
+<nav class="text-center">
+    <% if paginated_products.respond_to?(:num_pages) %>
+        <%= paginate paginated_products, theme: 'twitter-bootstrap-3' %>
+    <% end %>
+</nav>

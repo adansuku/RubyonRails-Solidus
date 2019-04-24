@@ -1,0 +1,29 @@
+<% content_for :sidebar do %>
+  <%= render :partial => 'spree/blog_entries/blog_sidebar' %>
+<% end %>
+
+<div id="blog_entry_container" class="col-xs-12 col-sm-12 col-md-10 col-lg-11 col-md-offset-2 col-lg-offset-1">
+	<h1><%= Spree.t(:blog_category) %>: <%= @category_name %></h1>
+	<div class="container-fluid">
+	    <div class="grid" >
+	        <div class="grid-sizer">&nbsp;</div>
+			<%= render :partial => 'spree/blog_entries/blog_entries' %>
+		</div>
+	</div>
+</div>
+
+<% content_for :foot do %>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<script src="https://cdn.rawgit.com/desandro/imagesloaded/master/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript">
+		var imgLoad = imagesLoaded( '.grid' );
+		imgLoad.on( 'always', function( instance ) {
+		// init Masonry
+			var $grid = $('.grid').masonry({
+			  itemSelector: '.grid-item',
+			  percentPosition: true,
+			  columnWidth: '.grid-sizer'
+			});
+		});
+	</script>
+<% end %>

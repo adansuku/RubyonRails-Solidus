@@ -1,0 +1,29 @@
+<table id="order_detail">
+  <h1 class='title'><%= Spree.t('user_mailer.welcome.subject') %></h1>
+  <tr>
+    <td>
+      <p class="lede" align='left'>
+        <%= Spree.t(:dear_customer) %>&nbsp;<span class="name"><%= @user.email %></span>
+      </p>
+      <p align='left'>
+        <%= Spree.t('user_mailer.welcome.thanks') %> <%= @store.name %>
+      </p>
+      <p align='left'>
+        <%= Spree.t('user_mailer.welcome.enjoy') %>
+      </p>
+      <p align='left' style='margin-top:20px;'>
+        <%= raw(Spree.t(:service_conditions)) %>        
+      </p>
+      <p align='left'>
+        <%= Spree.t(:service_info) %> <span style='color:#c89a4a;'>tiendaonline@florentino.com.</span>          
+      </p>
+      <p align='left'>
+        <%= Spree.t(:service_note) %>          
+      </p>
+      <p align='left'>
+        <%= Spree.t(:greeting) %><br/><br/>
+        <span class='team-florentino'><%= Spree.t(:team) %></span> 
+      </p>
+    </td>
+  </tr>
+</table>

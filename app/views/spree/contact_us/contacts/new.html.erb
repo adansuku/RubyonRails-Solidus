@@ -1,0 +1,45 @@
+<% content_for :head do -%>
+  <% if request.path.include?('solicitud') || request.path.include?('request') %>
+    <meta name="title" content="<%= Spree.t(:bespoke_tailoring) %>">
+  <% else %>
+    <meta name="title" content="<%= Spree.t(:at_customer) %>">
+  <% end %>
+<% end -%>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @contact } %>
+
+<% if request.path.include?('solicitud') || request.path.include?('request') %>
+  <h1><%= Spree.t(:bespoke_tailoring) %></h1>
+<% else %>
+  <h1><%= Spree.t(:at_customer) %></h1>
+<% end %>
+
+<%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
+  <% if SolidusContactUs.require_name %>
+    <p>
+      <%= f.label :name %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :name, class: 'required' %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.label :email %>
+    <span class="required">*</span><br/>
+    <%= f.email_field :email, class: 'required email' %>
+  </p>
+  <% if SolidusContactUs.require_subject %>
+    <p>
+      <%= f.label :subject %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :subject, class: 'required' %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.label :message %>
+    <span class="required">*</span><br/>
+    <%= f.text_area :message, class: 'required' %>
+  </p>
+  <p>
+    <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :title => Spree.t(:submit) %>
+  </p>
+<% end %>

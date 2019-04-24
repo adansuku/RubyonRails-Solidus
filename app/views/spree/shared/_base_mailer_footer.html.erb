@@ -1,0 +1,117 @@
+<table id="footer">
+  <tr>
+    <td>
+      <table>
+        <tr class='center-footer'>
+          <td  class='center-footer'>
+              <div class="icon-3" style='width: 25%; display:inline-block;margin:0; padding: 20px;'>
+                <p class='text-center'>
+                  <%= link_to I18n.locale.to_s == 'en' ? @store.url + spree.customer_support_path : @store.url + spree.atencion_al_cliente_path, target: '_blank', title: Spree.t(:at_customer) do %>
+                    <img src="<%= @store.url + image_path('icon-atencion.png')%>" class='icono-footer' alt='atencion_icon'>
+                  <% end %> 
+                </p>                
+                <p class='text-center'><strong><%= Spree.t(:at_customer).upcase %></strong></p>
+                <p class='text-center'>+34 986 787 050</p>
+              </div>
+              <div class="icon-3" style='width: 25%; display:inline-block;margin:0; padding: 20px;'>
+                <p class='text-center'>
+                  <%= link_to @store.url + '/guia-de-compras', target: '_blank', title: 'envios' do %>
+                    <img src="<%= @store.url + image_path('icon-truck.png')%>" class='icono-footer' alt='truck_icon'>
+                  <% end %>   
+                </p>
+                <p class='text-center'><strong><%= Spree.t(:deliver_date).upcase %></strong></p>
+                <p class='text-center'><%= Spree.t(:deliver_date_info) %></p>
+              </div>
+              <div class="icon-3" style='width: 25%; display:inline-block;margin:0; padding: 20px;'>
+                <p class='text-center'>
+                  <%= link_to @store.url + '/online_invoice_payments/new', target: '_blank', title: 'pago seguro' do %>
+                    <img src="<%= @store.url + image_path('icon-lock.png')%>" class='icono-footer' alt='lock_icon'>
+                  <% end %>
+                </p>
+                <p class='text-center'><strong><%= raw(Spree.t(:safe_payment).upcase) %></strong></p>
+                <p class='text-center'><%= Spree.t(:safe_payment_info) %></p>
+              </div>
+              <div class="icon-3" style='width: 25%; display:inline-block;margin:0; padding: 20px;'>
+                <p class='text-center'>
+                  <%= link_to @store.url + '/guia-de-compras', target: '_blank', title: 'pago seguro' do %>
+                    <img src="<%= @store.url + image_path('icon-arrow-turn.png')%>" class='icono-footer' alt='arrow-turn_icon'></p>
+                  <% end %>
+                <p class='text-center'><strong><%= Spree.t(:return_and_exchange).upcase %></strong></p>
+                <p class='text-center'><%= Spree.t(:return_and_exchange_info) %></p>
+              </div>
+              </td>
+          </tr>
+          <tr class='center-footer'>
+            <td class='center-footer'>
+              <span style='width:100%;border-top:1px solid gray;margin-right:50px;margin-left:50px;'></span>
+            </td>
+          </tr>
+          <tr class='center-footer'>
+            <td class='center-footer'>
+              <div class="icon-3" style='width: 50%; display:inline-block;margin:0; padding: 20px;'>
+                <p class='text-center'>
+                  <%= link_to @store.url + '/store_locator', target: '_blank', title: 'recogida en tiendas' do %>
+                    <img src="<%= @store.url + image_path('icon-recogida.png')%>" class='icono-footer-2' alt='recogida_icon'>
+                  <% end %>
+                </p>
+                <p class='text-center'><strong><%= Spree.t(:picked).upcase %></strong></p>
+                <p class='text-center'><%= Spree.t(:picked_info) %></p>
+              </div>
+              <div class="icon-3" style='width: 50%; display:inline-block;margin:0; padding: 20px;'>
+                <p class='text-center'>
+                  <%= link_to @store.url + '/guia-de-tallas', target: '_blank', title: 'arrangments' do %>
+                    <img src="<%= @store.url + image_path('icon-arreglos.png')%>" class='icono-footer-2' alt='arreglos_icon'>
+                  <% end %>
+                </p>
+                <p class='text-center'><strong><%= Spree.t(:arrangments).upcase %></strong></p>
+                <p class='text-center'><%= Spree.t(:arrangments_info) %></p>
+              </div>
+            </td>
+          </tr>
+          <tr class='center-white-footer'>
+            <td class='center-white-footer'>
+              <p class='center-padding'>#ESTILOFLORENTINO</p>
+            </td>
+          </tr>
+          <tr style='display:flex;justify-content: center;background-color: white;'>
+            <td class='center-white-footer'>
+              <ul class="social" style='text-align: center;'>
+                <li class="fb">
+                  <%= link_to 'https://www.facebook.com/florentinocoleccion', target: '_blank', title: 'Facebook' do %>
+                    <img src="<%= @store.url + image_path('icon-facebook.png')%>" class='icono' alt='facebook_icon'>
+                  <% end %>
+                </li>
+                <li class="ig">
+                  <%= link_to 'https://www.instagram.com/florentinomoda', target: '_blank', title: 'Instagram' do %>
+                    <img src="<%= @store.url + image_path('icon-instagram.png')%>" class='icono' alt='instagram_icon'>
+                  <% end %>
+                </li>
+                <li class="ig">
+                  <%= link_to 'https://www.youtube.com/user/florentinocoleccion', target: '_blank', title: 'youtube' do %>
+                    <img src="<%= @store.url + image_path('icon-youtube.png')%>" class='icono' alt='youtube_icon'>
+                  <% end %>
+                </li>
+                <li class="tw">
+                  <%= link_to 'https://www.twitter.com/florentinomoda', target: '_blank', title: 'Twitter' do %>
+                    <img src="<%= @store.url + image_path('icon-twitter.png')%>" class='icono' alt='twitter_icon'>
+                  <% end %>
+                </li>
+                <li class="pi">
+                  <%= link_to 'https://www.vimeo.com/florentinocoleccion', target: '_blank', title: 'vimeo' do %>
+                    <img src="<%= @store.url + image_path('icon-vimeo.png')%>" class='icono' alt='vimeo_icon'>
+                  <% end %>
+                </li>
+              </ul>
+          </td>
+        </tr>
+        <tr class='center-white-footer'>
+            <td class='center-white-footer'>
+              <p class='center-padding'>
+                FLORENTINO COLECCIÓN SL, PI Lalín 2000 C/ B30-34, 36500 Lalín (PONTEVEDRA - SPAIN).<br/>© 2018 FLORENTINO COLECCIÓN SL
+              </p>
+            </td>
+          </tr>
+      </table>
+    </td>
+  </tr>
+</table>

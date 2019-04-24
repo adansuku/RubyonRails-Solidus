@@ -1,0 +1,138 @@
+// Sticky footer
+// --------------------------------------------------
+@media #{$tablet-up} {
+  @include sticky-footer(80px, "#page", "#footer-pusher", "#footer");
+}
+
+@media #{$desktop-lg} {
+  @include sticky-footer(45px, "#page", "#footer-pusher", "#footer");
+}
+
+.flex-center{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#footer{
+  .inner{
+    position: relative;
+    p{
+      font-size: 12px;
+      line-height: 18px;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-weight: bolder;
+    }
+    p.flex-center{
+      margin-top:10px;
+      font-size: 10px;
+    }
+    h4{
+      text-transform:uppercase;
+      font-weight:bolder;
+    }
+    .row-footer-1{
+      height:100px;
+      background-color: $gray-ligh-ultra;
+    }
+    .row-footer-2{
+      background-color: $gray-ligh-ultra;
+      border-bottom: 1px solid $black;
+      height:200px;
+      position:relative;
+      .item-3{
+        width:25%;
+        flex-direction:column;
+        justify-content: flex-start;
+        min-height:120px;
+      }
+      .left,
+      .right{
+        flex-direction: column;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 50%;
+      }
+      .left{
+        border-right: 1px solid #333;
+        left:0;
+      }
+      .right{
+        right:0;
+      }
+    }    
+  }
+  ul{
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    li{
+      padding: 0 15px;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .icon{
+      a i{
+        font-size: 24px;
+      }
+    }
+  }  
+}
+
+@media #{$tablet-down} {
+  #footer{
+    .inner{
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction:column;
+      h4{
+        margin-bottom: 5px;
+        margin-top: 30px;
+      }
+      .row-footer-1{
+        width: 100%;
+        height:100%;
+        padding: 10px 15px;
+      }
+      .row-footer-2{
+        width:100%;
+        flex-direction:column;
+        height: auto;
+        .item-3{
+          width:100%;
+          padding: 25px 15px;
+          flex-direction:column;
+        }
+        .left,
+        .right{
+          width: 100%;
+          position:inherit;
+          padding: 0px 15px 20px 15px;
+          border:none;
+          text-align:center;
+        }
+        .right{
+          border-top:1px solid #333;
+        }
+      }
+      p.flex-center {
+        margin-top: 0;
+      }
+    }
+    #footer-pages ul{
+      text-align:center;
+      li{
+        padding:0px 5px;
+      }
+    }
+  }
+}
+
+
+

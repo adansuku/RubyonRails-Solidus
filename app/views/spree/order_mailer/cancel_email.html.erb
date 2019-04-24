@@ -1,0 +1,113 @@
+  <table id="order_detail">
+    <h1 class='title'><%= Spree.t('order_mailer.cancel_email.subject') %></h1>
+    <tr>
+      <td>
+        <p class="lede" align='left'>
+          <%= Spree.t(:dear_customer) %>&nbsp;<span class="name"><%= @order.ship_address.firstname %></span>
+        </p>
+        <p align='left' style='width:49%;display:inline-block;'>
+          <strong><%= Spree.t(:order).upcase %></strong><br/>
+          <span><strong><%= Spree.t(:order_id) %></strong> <%= @order.number %></span><br/>
+          <span><strong><%= Spree.t(:date) %></strong> <%= @order.updated_at.strftime("%m/%d/%Y") %></span><br/>
+          <span><strong><%= Spree.t(:payment_method) %></strong> <%= @order.payments.first.payment_method.name %></span>
+        </p>
+        <p align='left' style='width:49%;display:inline-block;'>
+          <strong><%= Spree.t(:ship_address).upcase %></strong><br/>
+          <span><%= @order.ship_address.full_name %></span><br/>
+          <span><%= @order.ship_address.address1 %></span><br/>
+          <span><%= @order.ship_address.zipcode %> <%= @order.ship_address.city %> <%= @order.ship_address.country.name %></span>
+        </p>
+        <table id="show_order">
+          <thead style='border-top:1px solid black;border-bottom:1px solid #333;'>
+            <tr>
+              <td style='padding: 10px 0px;'><%= Spree.t(:product) %></td>
+              <td align='center' style='padding: 10px 0px;'><%= Spree.t(:description) %></td>
+              <td align='right' style='padding: 10px 0px;'><%= Spree.t(:amount) %></td>
+            </tr>
+          </thead>
+          <% @order.line_items.each do |item| %>
+              <tr style="border-bottom: 1px solid #333;">
+                <td class="variant_sku">
+                  <% if item.variant.images.length == 0 %>
+                      <%= link_to image_tag(item.variant.product.display_image.attachment(:small)), item.variant.product %>
+                  <% else %>
+                      <%= link_to image_tag(item.variant.images.first.attachment.url(:small)), item.variant.product %>
+                  <% end %>
+                </td>
+                <td class="product_name">
+                  <strong><%= raw(item.variant.product.name) %></strong><br/>
+                  <%= raw(item.variant.options_text) -%>
+                </td>
+                <td class="product_name" align='right'><%=item.quantity%> x <%= display_price(item.variant.product) %> = <%= to_money(item_display_price(item)) %></td>
+              </tr>
+          <% end %>
+          <tr>
+            <td style='padding-top:20px;'></td>
+            <td style='padding-top:20px;'><%= Spree.t('order_mailer.cancel_email.subtotal') %></td>
+            <td style='padding-top:20px;' class="total"><%= display_subtotal(@order) %></td>
+          </tr>
+
+          <% if @order.line_item_adjustments.nonzero.exists? %>
+            <% @order.line_item_adjustments.nonzero.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
+              <% if adjustments.sum(&:amount) != 0 && !adjustments.first.source.promotion.active_solidus_sales %>
+                <tr>
+                  <td></td>
+                  <td><%= label %></td>
+                  <td class="total"><%= Spree::Money.new(adjustments.sum(&:amount), currency: @order.currency).to_html %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          <% end %>
+          
+          <% @order.shipments.group_by { |s| s.selected_shipping_rate.try(:name) }.each do |name, shipments| %>
+              <tr>
+                <td></td>
+                <td><%= Spree.t(:shipping) %> <%= name %>:</td>
+                <td class="total"><%= Spree::Money.new(shipments.sum(&:discounted_cost), currency: @order.currency) %></td>
+              </tr>
+          <% end %>
+          <% if @order.all_adjustments.eligible.tax.exists? %>
+              <% @order.all_adjustments.eligible.tax.group_by(&:label).each do |label, adjustments| %>
+                  <tr>
+                    <td></td>
+                    <td><%= Spree.t(:tax) %> <%= label %>:</td>
+                    <td class="total"><%= Spree::Money.new(adjustments.sum(&:amount), currency: @order.currency) %></td>
+                  </tr>
+              <% end %>
+          <% end %>
+          <% @order.adjustments.eligible.each do |adjustment| %>
+              <% next if (adjustment.source_type == 'Spree::TaxRate') and (adjustment.amount == 0) %>
+                <% if (adjustment.source_type == "Spree::PromotionAction" && !adjustment.source.promotion.active_solidus_sales) %>
+                  <tr>
+                    <td></td>
+                    <td><%= adjustment.label %>:</td>
+                    <td class="total"><%= adjustment.display_amount %></td>
+                  </tr>
+                <% end %>
+          <% end %>
+          <tr>
+            <td></td>
+            <td>
+              <%= Spree.t('order_mailer.cancel_email.total') %>
+            </td>
+            <td class="total">
+              <%= @order.display_total %>
+            </td>
+          </tr>
+        </table>
+        <p align='left' style='margin-top:20px;'>
+          <%= raw(Spree.t(:service_conditions)) %>        
+        </p>
+        <p align='left'>
+          <%= Spree.t(:service_info) %> <span style='color:#c89a4a;'>tiendaonline@florentino.com.</span>          
+        </p>
+        <p align='left'>
+          <%= Spree.t(:service_note) %>          
+        </p>
+        <p align='left'>
+          <%= Spree.t(:greeting) %><br/><br/>
+          <span class='team-florentino'><%= Spree.t(:team) %></span>  
+        </p>
+      </td>
+    </tr>
+  </table>

@@ -1,0 +1,152 @@
+.padding-col-static{
+  padding: 0px;
+  margin: 80px 0px 0px 0px ;
+}
+
+.justify{
+  text-align: justify;
+}
+
+.vertical-margin{
+  margin: 30px 0px;
+}
+
+.static{
+  p {
+    margin: 2em 0em;
+  }
+  h1{
+    margin: 1em 0em 1.2em 0em;
+  }
+}
+
+/*editorial*/
+.video-editorial{
+  width: 100%;
+}
+
+.video-button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: white;
+  transform: translate(-50%,-50%);
+  font-size: 30px;
+  font-family: $font-family-serif;
+  z-index: 10;
+  p{
+    font-style: italic;
+    font-size: 0.8em;
+  }
+}
+
+.video-button .fa{
+  color:white;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+}
+.fa:hover{
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+}
+
+.editorial-head{
+  height: calc(100vh - 140px);
+  background-size: cover;
+  background-position: top center;
+  padding-left: 0px;
+  padding-right: 0px;
+  h1{
+    font-size: 50px;
+    font-family: "Vollkorn", serif;
+    margin-top: 30px;
+  }
+  .editorial-title{
+    padding: 0px 80px;
+  }
+}
+
+.editorial .page-header{
+  display: none;
+}
+
+.editorial #content{
+  margin-top: 165px !important;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+/*Shop now*/
+.shop-now-editorial{
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.4);
+  letter-spacing: 8px;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+  &:hover{
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+    opacity: 1;
+
+  }
+}
+
+/*corporative*/
+.corporative{
+  padding: 0px 0px 100px 0px
+}
+
+/*Sastrería*/
+.boton-servicios{
+  background-color: $black;
+  color: $white;
+  font-size: 0.9em;
+  padding: 15px 25px 15px 25px;
+  margin: 10px 0px;
+}
+
+@media #{$tablet-down} {
+  .shop-now-editorial{
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  .edit-gallery-lg{
+    padding: 0px !important;
+    height: 570px;
+  }
+  .editorial-head{
+    height: 70vh;
+  }
+
+  .editorial #content {
+    margin-top: 90px !important;
+    margin-bottom: 0px;
+  }
+
+  .padding-col-static{
+    margin: 40px 0px 0px 0px;
+  }
+
+}

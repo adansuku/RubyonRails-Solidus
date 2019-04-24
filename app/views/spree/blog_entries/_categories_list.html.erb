@@ -1,0 +1,11 @@
+<% categories = Spree::BlogEntry.visible.tag_counts_on(:categories).sort_by(&:count) %>
+<% if categories.present? %>
+  	<%= content_tag :li, :class => 'dropdown' do %>
+	    <%= link_to( Spree.t('blog.categories') , '#', :data => { :toggle => 'dropdown' }, :class => "dropdown-toggle", :role => 'button' ) %>
+	    <ul class="dropdown-menu secondary-list-sidebar">
+	      <% categories.reverse.each do |category| %>
+	        <li><%= link_to category.name + " (#{category.count})", blog_category_path(category.name) %></li>
+	      <% end %>
+	    </ul>
+	<% end %>
+<% end %>

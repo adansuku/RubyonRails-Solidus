@@ -1,0 +1,84 @@
+div.dropdown.variant-options{
+  display:block;
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+
+h6.variant-option-type{
+  text-transform: uppercase;
+}
+
+
+.option-value-button,
+input#quantity{
+  width:100%;
+  max-width:100%;
+  background: $white;
+  border-color: #282828;
+  border: 2px solid #aaa;
+  color: $base-color;
+  margin: 10px 0px 0px 0px;
+  padding: 5px;
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:hover,
+  &:active:focus,
+  &:active.focus,
+  &.active:hover,
+  &.active:focus,
+  &.active.focus{
+    background: #f4f4f4 !important;
+    border: 2px solid $gray-light !important;
+    color: $gray-light !important;
+  }
+}
+
+input#quantity{
+  background: $white;
+  border-color: #282828;
+  border: 2px solid #aaa;
+  color: $gray-light;
+  margin-top:0px;
+}
+
+button#add-to-cart-button{
+  padding: 10px
+}
+
+.open > .option-value-button.dropdown-toggle{
+  &:hover,
+  &:focus,
+  &.focus{
+    background: #f4f4f4 !important;
+    border-color: #282828 !important;
+    border: 2px solid $gray-light !important;
+    color: #aaa !important;
+  }
+}
+
+ul.variant-option-values.dropdown-menu{
+  width:100%;
+  border: 2px solid $gray-light;
+}
+
+ul.variant-option-values.dropdown-menu li{
+  display: block;
+  width:100%;
+}
+
+.variant-option-values li a.option-value{
+  padding: 5px 20px;
+  margin: 0;
+  border: none;
+  border-radius:0px;
+  text-align: center;
+  &.selected,
+  &.in-stock:active,
+  &.in-stock:focus,
+  &.in-stock:hover{
+    background-color: $gray-light;
+    border: none;
+  }
+}
+

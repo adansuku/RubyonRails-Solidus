@@ -1,0 +1,67 @@
+// Glyphicons path
+$icon-font-path: "../../bootstrap/";
+
+// Compass
+@import
+"compass/css3",
+"compass/layout.scss",
+
+// Fonts
+url('https://fonts.googleapis.com/css?family=Lato'),
+url('https://fonts.googleapis.com/css?family=Lato|Vollkorn'),
+url('https://fonts.googleapis.com/css?family=EB+Garamond'),
+// Variables
+"variables",
+
+// Font Awesome
+"font-awesome",
+
+// Bootstrap
+"bootstrap",
+
+// spree/frontend/components
+"spree/frontend/components/mixins",
+"spree/frontend/components/breakpoints",
+"spree/frontend/components/utils",
+"spree/frontend/components/scaffolding",
+"spree/frontend/components/icons",
+"spree/frontend/components/new-icons",
+"spree/frontend/components/forms",
+"spree/frontend/components/buttons",
+"spree/frontend/components/type",
+"spree/frontend/components/page-header",
+"spree/frontend/components/pace",
+"spree/frontend/components/dropdowns",
+"spree/frontend/components/breadcrumbs",
+"spree/frontend/components/pagination",
+"spree/frontend/components/masonry",
+"spree/frontend/components/hover-effect",
+"spree/frontend/components/cookies_bar",
+"spree/frontend/components/checkout_steps",
+"spree/frontend/components/slick_theme",
+"spree/frontend/components/slider",
+"spree/frontend/components/scroll_to_top",
+"./components/variant_options_dropdown",
+"./components/date-picker",
+"./components/flip-box",
+
+// spree/frontend/sections
+"./sections/header",
+"./sections/footer",
+"./sections/breadcrumbs_and_filters",
+"spree/frontend/sections/home",
+"./sections/cart",
+"spree/frontend/sections/funnel",
+"spree/frontend/sections/user_account",
+"spree/frontend/sections/product-list",
+"spree/frontend/sections/product",
+"./sections/products_fixes",
+"spree/frontend/sections/article",
+"spree/frontend/sections/contact_us",
+"./sections/sidebar",
+"./sections/home",
+"./sections/blog",
+"table",
+"static",
+"static-hemeroteca",
+"fixes";

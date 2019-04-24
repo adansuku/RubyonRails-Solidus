@@ -1,0 +1,27 @@
+    <% if @page.layout.present? and @page.render_layout_as_partial? %>
+      <%= render :partial => @page.layout %>
+    <% else %>
+
+    <% content_for :head do -%>
+        <%- if @page.meta_title.present? -%>
+        <meta name="title" content="<%=@page.meta_title%>">
+        <%- else -%>
+        <meta name="title" content="<%=@page.title%>">
+        <%- end -%>
+        <meta name="keywords" content="<%=@page.meta_keywords%>">
+        <meta name="description" content="<%=@page.meta_description%>">
+        <%= render_snippet('/custom-css') %>
+    <% end -%>
+
+      <% content_for :scripts do %>
+        <%= render :partial => 'spree/shared/jquery_lazy' %>
+      <% end %>
+
+    <% content_for :templates_full_width do %>
+      <div id="page_content" class="container-fluid">
+        <% cache([I18n.locale, @page,  (@page[:updated_at] || Date.today).to_s(:number)] ) do %>
+        <%= raw @page.body %>
+        <% end %>
+      </div>
+    <% end %>
+<% end %>

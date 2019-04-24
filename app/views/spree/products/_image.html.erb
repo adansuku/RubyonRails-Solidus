@@ -1,0 +1,16 @@
+<% @product.images.order(position: :asc).each do |i| %>
+    <% caption_image = i.attachment(:original) %>
+	    <li class="col-xs-6 col-md-6 list-images" >
+	      <%= image_tag(i.attachment(:large), :itemprop => "image",  :class => "product__image intense lazy",  data: { caption: "" , title: accurate_title , image: caption_image }) %>
+      </li>
+<% end %>
+
+<% if @product.variant_images.uniq.size > 1 && @product.has_variants? %>
+  <% @product.variant_images.each do |i| %>
+    <% next if @product.images.include?(i) %>
+      <% caption_image =  i.attachment.url(:original) %>
+        <li class="col-xs-6 col-md-6 list-images" >
+            <%= image_tag(i.attachment(:large), :itemprop => "image",  :class => "product__image intense thumbnails lazy",  data: { caption: "" , title: accurate_title , image: caption_image }) %>
+       </li>
+  <% end %>
+<% end %>

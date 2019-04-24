@@ -1,0 +1,22 @@
+<% pages = find_page('mundo-florentino') %>
+<% if pages %>
+    <li class="dropdown">
+      <a href="#" class="root-taxon"><%= Spree.t(:mundo_florentino) %></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+      	<div class="container">
+        	<%= render :partial => "spree/static_content/static_content_list", :collection => pages, :as => :page %>
+        </div>
+      </ul>
+    </li>
+<% end %>
+<% pages = find_page('editorial') %>
+<% if pages %>
+    <li class="dropdown">
+      <a href="#" role="button" class="root-taxon"><%= Spree.t(:editorial) %></a>
+      	<ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+	      	<div class="container">
+	        	<%= render :partial => "spree/static_content/static_content_list", :collection => pages, :as => :page %>
+	        </div>
+        </ul>
+    </li>
+<% end %>

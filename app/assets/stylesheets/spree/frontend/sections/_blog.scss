@@ -1,0 +1,39 @@
+#blog_entry_container{
+	h1{
+		width:100%;
+		text-align:center;
+		margin-bottom: 30px;
+	}
+	.blog-entry{
+		h2{
+			text-align:center;
+		}
+		p{
+			margin: 10px 0px;
+		}
+		.blog_entry_details{
+	    	padding: 15px;
+	    	float:none;
+		}
+		.blog_read_more {
+		    margin-left: 15px;
+		    display:block;
+		    float:none;
+		}
+		.blog_image{
+	    	margin-bottom: 20px;
+		}
+	}
+}
+
+.grid-item{
+	margin-bottom: 20px;
+}
+
+@media #{$tablet-down} {
+	#blog_entry_container{
+		.grid-item{
+			width:100%;
+		}
+	}
+}

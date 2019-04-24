@@ -1,0 +1,18 @@
+<% if (@product.images + @product.variant_images).uniq.size > 1 %>
+	<div class="product__thumbs col-xs-12 col-sm-12 col-md-12" id="thumbnails" data-hook>
+	    <div class="" id="js-product-thumb">
+	      <% @product.images.order(position: :asc).offset(0).each do |i| %>
+	          <% caption_image =  i.attachment.url(:original) %>
+	          <%= image_tag(i.attachment(:large), :itemprop => "image",  :class => "product__image intense thumbnails lazy",  data: { caption: "" , title: accurate_title , image: caption_image }) %>
+				<% end %>
+	      <% if @product.has_variants? %>
+	        <% @product.variant_images.each do |i| %>
+	          <% next if @product.images.include?(i) %>
+	            <% caption_image =  i.attachment.url(:original) %>
+	            <%= image_tag(i.attachment(:large), :itemprop => "image",  :class => "product__image intense thumbnails lazy",  data: { caption: "" , title: accurate_title , image: caption_image }) %>
+					<% end %>
+	      <% end %>
+	    </div>
+	  </ul>
+	</div>
+<% end %>

@@ -1,0 +1,24 @@
+<%= content_tag :li, :class => 'dropdown' do %>
+  <%= link_to( Spree.t('blog.archive') , '#', :data => { :toggle => 'dropdown' }, :class => "dropdown-toggle", :role => 'button' ) %>
+  <ul class="dropdown-menu secondary-list-sidebar">
+    <% news_archive.to_a.reverse.each do |year, months_with_entries| %>
+      <% d = DateTime.parse("1/#{year}") %>
+      <li><span></span>
+        <%= link_to(year, blog_archive_path(:year => d.year)) %>
+        <ul class="months">
+          <% months_with_entries.each do |month, entries| %>
+            <% d = DateTime.parse("#{year}, #{month}") %>
+            <li> <span></span>
+              <%= link_to I18n.l(d, :format => "%B").capitalize, blog_archive_path(:year => d.year, :month => d.month) %>
+              <ul class="posts">
+                <% entries.each do |entry| %>
+                  <li><%= link_to(entry.title, blog_entry_permalink(entry)) %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

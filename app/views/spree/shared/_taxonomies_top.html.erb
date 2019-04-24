@@ -1,0 +1,37 @@
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<% @taxonomies = get_taxonomies unless @taxonomies.present?  %>
+<% unless @taxonomies.empty? %>
+    <% @taxonomies.each do |taxonomy| %>
+        <% css_class = ((@taxon && @taxon.root.id.equal?(taxonomy.id) && (is_some_path?(root_path) === 'not'))) ? 'dropdown active' : 'dropdown' %>
+        <% cache(@taxon.present? ?  [I18n.locale, taxonomy, css_class, @taxon] : [I18n.locale, taxonomy, css_class] ) do %>
+            <% if taxonomy.root.children.empty? && taxonomy.root.available? %>
+                <%= content_tag :li, :class => css_class do %>
+                    <%= link_to( taxonomy.name , seo_url(Spree::Taxon.find_by_id(taxonomy.root.id)) )%>
+                <% end %>
+            <% elsif taxonomy.root.available? %>
+                <%= content_tag :li, :class => css_class do %>
+                    <%= link_to( taxonomy.name , seo_url(Spree::Taxon.find_by_id(taxonomy.root.id)), class: 'root-taxon' ) %>
+                        <%= content_tag :ul, class: 'dropdown-menu row' do %>
+                    	    <%= content_tag :div, class: 'container' do %>
+                                <% if count_taxon_images(taxonomy.root) > 0 %>
+                                	<%= content_tag :div, class: 'col-xs-12 col-sm-12 col-md-6' do %>
+                                		<%= taxons_tree(taxonomy.root, @taxon, max_level, 6) %>
+                                	<% end %>
+
+                                  <%= content_tag :div, class: 'col-md-1 hidden-xs hidden-sm' do %>
+                                  <% end %>
+
+                                  <%= content_tag :div, class: 'col-md-5 hidden-xs hidden-sm' do %>
+                                    <%= taxonomy_images(taxonomy.root) %>
+                                  <% end %>
+
+                                <% else %>
+                                	<%= taxons_tree(taxonomy.root, @taxon, max_level, 3) %>
+                                <% end %>
+                            <% end %>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>

@@ -1,0 +1,12 @@
+$('div.taxon_products ul.product-list').append("<%= j render(:partial => 'spree/shared/product', locals: {:products => @products } ) %>");
+product = $('ul.product-list li').first();
+var width = ( 100 * parseFloat(product.css('width')) / parseFloat(product.parent().css('width'))) - 0.2 + '%';
+$('ul.product-list li').each( function() {
+	$(this).css('width',width);
+});
+<% if @products.next_page %>
+  $('.pagination').replaceWith('<%= j paginate @products %>');
+  //$('.pagination').css('display', 'none');
+<% else %>
+  $('.pagination').remove();
+<% end %>
