@@ -58,7 +58,7 @@ group :staging do
 end
 group :production do
   gem 'newrelic_rpm', '~> 5.2', '>= 5.2.0.345'
-  gem 'puma', '~> 3.12'
+  gem 'puma', '~> 5.3'
   # gem 'therubyracer' no need it we have nodejs, only required for 0.70.x or later
 end
 
